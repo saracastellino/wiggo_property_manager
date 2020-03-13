@@ -2,7 +2,7 @@
 
 <!-- (*) means it will be part of extensions -->
 
-Homepage --> becomes header
+***Homepage --> becomes header
 
 Search values through autocomplete tab*
 
@@ -10,7 +10,7 @@ Search by menu (properties, guest, booking)
 
 
 
-Properties
+***Properties
 
 Sort by (name, place, category, sleeps, price)*
 
@@ -26,7 +26,7 @@ View bookings*
 
 
 
-Guests
+***Guests
 
 Sort by (name)*
 
@@ -42,7 +42,7 @@ View bookings*
 
 
 
-Bookings
+***Bookings
 
 Sort by (property name, booking platform, guest name, check in/out date)*
 
