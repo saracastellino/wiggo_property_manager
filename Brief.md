@@ -4,7 +4,7 @@ A holidays property manager (co-host) has approached you to build a web applicat
 A property may be rented to many guests at a time. A guest is registered with only one holiday property.
 
 
-MVP
+***MVP***
 
 The co-host wants to be able to register / track guests,
 
@@ -16,10 +16,7 @@ The views should allow the co-host to see bookings, guests and properties.
 
 
 
-
-
-
-Possible Extensions
+***Possible Extensions***
 
 
 
