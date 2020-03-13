@@ -16,6 +16,9 @@ The views should allow the co-host to see bookings, guests and properties.
 
 
 
+
+
+
 Possible Extensions
 
 
