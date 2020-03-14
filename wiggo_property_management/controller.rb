@@ -15,8 +15,7 @@ get '/properties' do
 end
 
 get '/properties/new' do
-  @guests = Guest.all
-  erb(:new)
+  erb(:new_property)
 end
 
 post '/properties' do
@@ -26,7 +25,7 @@ end
 
 get '/properties/:id' do
   @property = Property.find(params['id'])
-  erb(:show)
+  erb(:show_property)
 end
 
 get '/properties/:id/edit' do
@@ -52,34 +51,32 @@ get '/guests' do
 end
 
 get '/guests/new' do
-  @houses = House.all
-  erb(:new)
+  erb(:new_guest)
 end
 
 post '/guests' do
-  guest.new(params).save
+  Guest.new(params).save
   redirect to '/guests'
 end
 
 get '/guests/:id' do
-  @guest = guest.find(params['id'])
-  erb(:show)
+  @guest = Guest.find(params['id'])
+  erb(:show_guest)
 end
 
 get '/guests/:id/edit' do
-  @houses = House.all
-  @guest = guest.find(params['id'])
+  @guest = Guest.find(params['id'])
   erb(:edit)
 end
 
 post '/guests/:id' do
-  guest = guest.new(params)
-  guest.update
+  guest = Guest.new(params)
+  Guest.update
   redirect to "/guests/#{params['id']}"
 end
 
 post '/guests/:id/delete' do
-  guest = guest.find(params['id'])
-  guest.delete
+  guest = Guest.find(params['id'])
+  Guest.delete
   redirect to '/guests'
 end
