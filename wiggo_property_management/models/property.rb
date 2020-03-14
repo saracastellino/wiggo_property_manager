@@ -3,13 +3,15 @@ require_relative('../db/sql_runner')
 class Property
 
   attr_reader :id
-  attr_accessor :name, :address, :booking_platform, :sleeps, :daily_fee, :contacts
+  attr_accessor :name, :category, :address, :place, :booking_platform, :sleeps, :daily_fee, :contacts
 
 
   def initialize( properties )
     @id = properties['id'].to_i if properties['id']
     @name = properties['name']
+    @category = properties['category']
     @address = properties['address']
+    @place = properties['place']
     @booking_platform = properties['booking_platform']
     @sleeps = properties['sleeps'].to_i
     @daily_fee = properties['daily_fee'].to_i
@@ -17,8 +19,8 @@ class Property
   end
 
   def save
-    sql = "INSERT INTO properties (name, address, booking_platform, sleeps, daily_fee, contacts) VALUES ($1, $2, $3, $4, $5, $6) RETURNING id"
-    values = [@name, @address, @booking_platform, @sleeps, @daily_fee, @contacts]
+    sql = "INSERT INTO properties (name, category, address, place, booking_platform, sleeps, daily_fee, contacts) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING id"
+    values = [@name, @category, @address, @place, @booking_platform, @sleeps, @daily_fee, @contacts]
     properties_data = SqlRunner.run(sql, values)
     return properties_data.first['id'].to_i
   end
@@ -27,5 +29,38 @@ class Property
     sql = "DELETE FROM properties;"
     SqlRunner.run(sql)
   end
+
+    def update()
+      sql = "UPDATE properties SET (name, category, address, place, booking_platform, sleeps, daily_fee, contacts) = ($1, $2, $3, $4, $5, $6, $7, $8)
+      WHERE id = $9"
+      values = [@name, @category, @address, @place, @booking_platform, @sleeps, @daily_fee, @contacts, @id]
+      SqlRunner.run(sql, values)
+    end
+
+    def delete()
+      sql = "DELETE FROM properties WHERE id = $1"
+      values = [@id]
+      SqlRunner.run(sql, values)
+    end
+
+    def self.all()
+      sql = "SELECT * FROM properties"
+      property_data = SqlRunner.run(sql)
+      properties = map_items(property_data)
+      return properties
+    end
+
+    def self.map_items(property_data)
+      return property_data.map { |property| Property.new(property) }
+    end
+
+    def self.find(id)
+      sql = "SELECT * FROM properties
+      WHERE id = $1"
+      values = [id]
+      result = SqlRunner.run(sql, values).first
+      property = Property.new(result)
+      return property
+    end
 
 end

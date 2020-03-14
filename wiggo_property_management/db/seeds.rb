@@ -19,11 +19,24 @@ guest3.save
 guest4.save
 guest5.save
 
-property1 = Property.new({"name" => "Villa del Glicine", "address" => "Via lago Talere 22", "booking_platform" => "Airbnb", "sleeps" => 6, "daily_fee" => 400, "contacts" => "+39 070 87687678"})
+property1 = Property.new({"name" => "Villa del Glicine", "category" => "Villa", "address" => "Via lago Talere 22", "place" => "Chia", "booking_platform" => "Homeaway", "sleeps" => 6, "daily_fee" => 400, "contacts" => "+39 070 8768878"})
+property2 = Property.new({"name" => "Villa Esmeralda", "category" => "Villa", "address" => "Via ldei Tulipani 15", "place" => "Pula", "booking_platform" => "Booking.com", "sleeps" => 8, "daily_fee" => 550, "contacts" => "+39 070 0983708"})
+property3 = Property.new({"name" => "Charlie's place", "category" => "Loft", "address" => "Viale Alberato 333", "place" => "Cagliari", "booking_platform" => "Homeaway", "sleeps" => 3, "daily_fee" => 200, "contacts" => "+39 070 123409"})
+property4 = Property.new({"name" => "Nautilus", "category" => "Villa", "address" => "Viale Poetto 34", "place" => "Cagliari", "booking_platform" => "Airbnb", "sleeps" => 4, "daily_fee" => 250, "contacts" => "+39 070 3678693"})
+property5 = Property.new({"name" => "Fifty-one", "category" => "Luxury flat", "address" => "Via Manno 79", "place" => "Chia", "booking_platform" => "Homeaway", "sleeps" => 4, "daily_fee" => 350, "contacts" => "+39 070 9832749"})
 property1.save
+property2.save
+property3.save
+property4.save
+property5.save
+#
+# booking1 = Booking.new({"guest_id" => guest1.id, "property_id" => property1.id, "check_in_date" => "Jul 4 2020", "check_out_date" => "Jul 31 2020", "total_earning" => 7000})
+# booking1.save
 
-booking1 = Booking.new({"guest_id" => guest1.id, "property_id" => property1.id, "check_in_date" => "Jul 4 2020", "check_out_date" => "Jul 31 2020", "total_earning" => 7000})
-booking1.save
+guest4.budget = 14000
+guest4.update
+property3.contacts = "+39 349080983"
+property3.update
 
 binding.pry
 nil

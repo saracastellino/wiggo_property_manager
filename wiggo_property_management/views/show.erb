@@ -1,0 +1,12 @@
+<h2><%= @property.name %></h2>
+
+<p>Category: <%= @property.category %></p>
+<p>Address: <% @property.address %></p>
+<p>Place: <%= @property.place %></p>
+<p>Booking platform: <%= @property.booking_platform %></p>
+<p>Sleeps: <%= @property.sleeps %></p>
+<p>Daily fee: <%= @property.daily_fee %></p>
+<p>Contacts: <%= @property.contacts %></p>
+
+<a href="/properties/<%= @property.id %>/edit">Edit</a>
+<form action="/properties/<%= @property.id %>/delete" method="POST"><input type="submit" value="Delete"></form>

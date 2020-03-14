@@ -34,4 +34,37 @@ class Guest
     SqlRunner.run(sql)
   end
 
+  def update()
+    sql = "UPDATE guests SET (name,last_name, nationality, dob, pax, documents, contacts, budget) = ($1, $2, $3, $4, $5, $6, $7, $8)
+    WHERE id = $9"
+    values = [@name, @last_name, @nationality, @dob, @pax, @documents, @contacts, @budget, @id]
+    SqlRunner.run(sql, values)
+  end
+
+  def delete()
+    sql = "DELETE FROM guests WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
+  def self.all()
+    sql = "SELECT * FROM guests"
+    guest_data = SqlRunner.run(sql)
+    guests = map_items(guest_data)
+    return guests
+  end
+
+  def self.map_items(guest_data)
+    return guest_data.map { |guest| Guest.new(guest) }
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM guests
+    WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values).first
+    guest = Guest.new(result)
+    return guest
+  end
+
 end

@@ -1,0 +1,34 @@
+<section class="flex-container">
+  <aside class="flex-item sidebar">Sidebar</aside>
+  <main class="flex-item main">
+    <h2>.properties</h2>
+    <div id="property-wrapper">
+      <% @properties.each do |property| %>
+      <div class="cardCont">
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+            <div class="property">
+            <h3><a href="/properties/<%= property.id %>"><%= property.name %></a></h3>
+            <p>Category: <%= property.category %></p>
+            <p>Place: <%= property.place %></p>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="property">
+            <h3><a href="/properties/<%= property.id %>"><%= property.name %></a></h3>
+            <p>Address: <%= property.address %></p>
+            <p>Booking platform: <%= property.booking_platform %></p>
+            <p>Sleeps: <%= property.sleeps %></p>
+            <p>Daily fee: <%= property.daily_fee %></p>
+            <p>Contacts: <%= property.contacts %></p>
+            </div>
+          </div>
+        </div>
+        </div>
+        <% end %>
+        </div>
+    </div>
+  </main>
+  <footer class="flex-item footer">Footer</footer>
+</section>

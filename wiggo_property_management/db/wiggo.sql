@@ -1,6 +1,7 @@
+DROP TABLE IF EXISTS bookings;
 DROP TABLE IF EXISTS guests;
 DROP TABLE IF EXISTS properties;
-DROP TABLE IF EXISTS bookings;
+
 
 CREATE TABLE guests (
   id SERIAL PRIMARY KEY,
@@ -17,7 +18,9 @@ CREATE TABLE guests (
 CREATE TABLE properties (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255),
+  category VARCHAR(255),
   address VARCHAR(255),
+  place VARCHAR(255),
   booking_platform VARCHAR(255),
   sleeps VARCHAR(255),
   daily_fee INT,
