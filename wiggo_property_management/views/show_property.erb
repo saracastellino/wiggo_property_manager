@@ -11,8 +11,8 @@
 <p>Daily fee: <%= @property.daily_fee %></p>
 <p>Contacts: <%= @property.contacts %></p>
 
-<a href="/properties/<%= @property.id %>/edit">Edit</a>
-<form action="/properties/<%= @property.id %>/delete" method="POST"><input type="submit" value="Delete"></form>
+<a href="/properties/<%= @property.id %>/edit" class="button">Edit</a>
+<form action="/properties/<%= @property.id %>/delete" method="POST"><input type="submit" value="Delete" class="button"></form>
 </main>
 <footer class="flex-item footer">Footer</footer>
 </section>

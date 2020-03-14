@@ -9,8 +9,8 @@
 <p>Documents: <%= @guest.documents %></p>
 <p>Contacts: <%= @guest.contacts %></p>
 
-<a href="/guests/<%= @guest.id %>/edit">Edit</a>
-<form action="/guests/<%= @guest.id %>/delete" method="POST"><input type="submit" value="Delete"></form>
+<a href="/guests/<%= @guest.id %>/edit" class="button">Edit</a>
+<form action="/guests/<%= @guest.id %>/delete" method="POST"><input type="submit" value="Delete" class="button"></form>
 </main>
 <footer class="flex-item footer">Footer</footer>
 </section>

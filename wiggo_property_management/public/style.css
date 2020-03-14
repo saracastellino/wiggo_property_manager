@@ -9,12 +9,13 @@
   align-items: stretch;
 }
 
+.header,
 .footer  {
-  flex: 1 100%;
+  flex: 4;
 }
 .sidebar {
   font-family: Bhavuka;
-  flex: 1;
+  flex: 0.5;
   background-color: aquamarine;
 }
 .main {
@@ -30,15 +31,26 @@
   text-align: justify;
 }
 
-nav {
+.header {
   font-family: Montserrat;
-  color: white;
+  background-color: white;
   font-size: 1.5vw;
   text-decoration: none;
+  list-style-type: none;
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
+  /* justify-content: flex-end;
+  align-items: flex-end; */
   flex-direction: row;
+}
+/*
+nav a {
+  text-decoration: none;
+  color: white;
+} */
+
+a {
+  text-decoration: none;
+  color: white;
 }
 
 .menu-item-home {
@@ -91,6 +103,15 @@ h2 {
 }
 
 p {
+  font-family: Montserrat;
+  color: grey;
+  font-size: 22px;
+  display: flex;
+  justify-content: center;
+  flex-flow: wrap;
+}
+
+.cardCont p {
   font-family: Montserrat;
   color: white;
   font-size: 22px;
@@ -153,4 +174,44 @@ form {
   background-color: dodgerblue;
   color: white;
   transform: rotateY(180deg);
+}
+
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
 }

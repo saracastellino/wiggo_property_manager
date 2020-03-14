@@ -11,8 +11,7 @@ CREATE TABLE guests (
   dob VARCHAR(255),
   pax INT,
   documents VARCHAR(255),
-  contacts VARCHAR(255),
-  budget INT
+  contacts VARCHAR(255)
 );
 
 CREATE TABLE properties (

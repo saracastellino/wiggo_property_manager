@@ -3,7 +3,7 @@ require_relative('../db/sql_runner')
 class Guest
 
   attr_reader :id
-  attr_accessor :name, :last_name, :nationality, :dob, :pax, :documents, :contacts, :budget
+  attr_accessor :name, :last_name, :nationality, :dob, :pax, :documents, :contacts
 
   def initialize( guests )
     @id = guests['id'].to_i if guests['id']
@@ -14,13 +14,12 @@ class Guest
     @pax = guests['pax'].to_i
     @documents = guests['documents']
     @contacts = guests['contacts']
-    @budget = guests['budget'].to_i
   end
 
   def save
-    sql = "INSERT INTO guests (name,last_name, nationality, dob, pax, documents, contacts, budget)
-    VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING id"
-    values = [@name, @last_name, @nationality, @dob, @pax, @documents, @contacts, @budget]
+    sql = "INSERT INTO guests (name,last_name, nationality, dob, pax, documents, contacts)
+    VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING id"
+    values = [@name, @last_name, @nationality, @dob, @pax, @documents, @contacts]
     guests_data = SqlRunner.run(sql, values)
     return guests_data.first['id'].to_i
   end
@@ -35,9 +34,9 @@ class Guest
   end
 
   def update()
-    sql = "UPDATE guests SET (name,last_name, nationality, dob, pax, documents, contacts, budget) = ($1, $2, $3, $4, $5, $6, $7, $8)
-    WHERE id = $9"
-    values = [@name, @last_name, @nationality, @dob, @pax, @documents, @contacts, @budget, @id]
+    sql = "UPDATE guests SET (name,last_name, nationality, dob, pax, documents, contacts) = ($1, $2, $3, $4, $5, $6, $7)
+    WHERE id = $8"
+    values = [@name, @last_name, @nationality, @dob, @pax, @documents, @contacts, @id]
     SqlRunner.run(sql, values)
   end
 
