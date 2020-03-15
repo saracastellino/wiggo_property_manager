@@ -1,0 +1,35 @@
+<section class="flex-container">
+  <main class="flex-item main">
+    <h2>.booking</h2>
+
+    <a href="/bookings/new" class="button">add a booking</a>
+
+    <div id="booking-wrapper">
+      <% @bookings.each do |booking| %>
+      <div class="cardCont">
+      <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+      <div class="booking">
+        <h3><a href="/bookings/<%= booking.id %>"><%= booking.property_id %></a></h3>
+        <p>Guest:<br> <%= booking.guest_id %></p>
+        <p>Pax:<br> <% booking.pax %>
+          <p>Nights: <% booking.nights %></p>
+      </div>
+    </div>
+    <div class="flip-card-back">
+      <div class="booking">
+        <h3><a href="/bookings/<%= booking.id %>"><%= booking.property_id %></a></h3>
+        <p>Check in:<br> <%= booking.check_in_date %></p>
+        <p>Check out:<br> <%= booking.check_out_date %></p>
+      </div>
+        </div>
+      </div>
+      </div>
+        <% end %>
+        </div>
+      </div>
+  </main>
+  <footer class="flex-item footer">Wiggo | Property management
+    Palo Alto 3000 Tannery Way Santa Clara, CA 95054.</footer>
+</section>

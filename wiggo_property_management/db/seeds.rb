@@ -29,10 +29,10 @@ property2.save
 property3.save
 property4.save
 property5.save
-#
-# booking1 = Booking.new({"guest_id" => guest1.id, "property_id" => property1.id, "pax" => 6, "check_in_date" => "Jul 4 2020", "check_out_date" => "Jul 31 2020", "nights" => 27, "total_earning" => 7000})
-# # "total_earning" => booking1.total_earning})
-# booking1.save
+
+booking1 = Booking.new({"guest_id" => guest1.id, "property_id" => property1.id, "pax" => 6, "check_in_date" => "Jul 4 2020", "check_out_date" => "Jul 31 2020", "nights" => 27, "total_earning" => 7000})
+# "total_earning" => booking1.total_earning})
+booking1.save
 
 guest4.documents = "Driving license"
 guest4.update

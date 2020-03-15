@@ -25,25 +25,25 @@ class Property
     return properties_data.first['id'].to_i
   end
 
-  def self.delete_all()
+  def self.delete_all
     sql = "DELETE FROM properties;"
     SqlRunner.run(sql)
   end
 
-    def update()
+    def update
       sql = "UPDATE properties SET (name, category, address, place, booking_platform, sleeps, daily_fee, contacts) = ($1, $2, $3, $4, $5, $6, $7, $8)
       WHERE id = $9"
       values = [@name, @category, @address, @place, @booking_platform, @sleeps, @daily_fee, @contacts, @id]
       SqlRunner.run(sql, values)
     end
 
-    def delete()
+    def delete
       sql = "DELETE FROM properties WHERE id = $1"
       values = [@id]
       SqlRunner.run(sql, values)
     end
 
-    def self.all()
+    def self.all
       sql = "SELECT * FROM properties"
       property_data = SqlRunner.run(sql)
       properties = map_items(property_data)
@@ -61,6 +61,13 @@ class Property
       result = SqlRunner.run(sql, values).first
       property = Property.new(result)
       return property
+    end
+
+    def self.sort_by_place
+      sql = "SELECT * FROM properties ORDER BY place ASC"
+      property_data = SqlRunner.run(sql)
+      properties = map_items(property_data)
+      return properties
     end
 
 end

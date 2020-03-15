@@ -1,15 +1,15 @@
 <section class="flex-container">
   <main class="flex-item main">
-    <h2><%= @guest.guest_name %></h2>
+    <h2 class="page_title"><%= @guest.guest_name %></h2>
 
 <p>Nationality: <%= @guest.nationality %></p>
 <p>DOB: <%= @guest.dob %></p>
-<p>Pax: <%= @guest.pax %></p>
 <p>Documents: <%= @guest.documents %></p>
 <p>Contacts: <%= @guest.contacts %></p>
 
 <a href="/guests/<%= @guest.id %>/edit" class="button">Edit</a>
 <form action="/guests/<%= @guest.id %>/delete" method="POST"><input type="submit" value="Delete" class="button"></form>
 </main>
-<footer class="flex-item footer">Footer</footer>
+<footer>Wiggo | Property management
+  Palo Alto 3000 Tannery Way Santa Clara, CA 95054.</footer>
 </section>
