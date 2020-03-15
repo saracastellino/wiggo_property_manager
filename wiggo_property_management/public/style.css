@@ -9,13 +9,12 @@
   align-items: stretch;
 }
 
-.header,
 .footer  {
-  flex: 4;
+  flex: 1 100%;
 }
 .sidebar {
   font-family: Bhavuka;
-  flex: 0.5;
+  flex: 1;
   background-color: aquamarine;
 }
 .main {
@@ -31,26 +30,15 @@
   text-align: justify;
 }
 
-.header {
+nav {
   font-family: Montserrat;
-  background-color: white;
+  color: white;
   font-size: 1.5vw;
   text-decoration: none;
-  list-style-type: none;
   display: flex;
-  /* justify-content: flex-end;
-  align-items: flex-end; */
+  justify-content: flex-end;
+  align-items: flex-end;
   flex-direction: row;
-}
-/*
-nav a {
-  text-decoration: none;
-  color: white;
-} */
-
-a {
-  text-decoration: none;
-  color: white;
 }
 
 .menu-item-home {
@@ -139,7 +127,7 @@ form {
 .flip-card {
   background-color: transparent;
   width: 10em;
-  height: 15em;
+  height: 18em;
   border: 1px solid #f1f1f1;
   perspective: 1000px;
 }

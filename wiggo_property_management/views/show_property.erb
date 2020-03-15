@@ -1,5 +1,4 @@
 <section class="flex-container">
-  <aside class="flex-item sidebar">Sidebar</aside>
   <main class="flex-item main">
     <h2><%= @property.name %></h2>
 
@@ -8,7 +7,7 @@
 <p>Place: <%= @property.place %></p>
 <p>Booking platform: <%= @property.booking_platform %></p>
 <p>Sleeps: <%= @property.sleeps %></p>
-<p>Daily fee: <%= @property.daily_fee %></p>
+<p>Daily fee: £<%= @property.daily_fee %></p>
 <p>Contacts: <%= @property.contacts %></p>
 
 <a href="/properties/<%= @property.id %>/edit" class="button">Edit</a>

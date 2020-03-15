@@ -1,10 +1,9 @@
 <section class="flex-container">
-  <aside class="flex-item sidebar">Sidebar</aside>
   <main class="flex-item main">
     <h2>.properties</h2>
 
   <a href="/properties/new" class="button">add a property</a>
-  
+
     <div id="property-wrapper">
       <% @properties.each do |property| %>
       <div class="cardCont">
@@ -13,18 +12,18 @@
                 <div class="flip-card-front">
             <div class="property">
             <h3><a href="/properties/<%= property.id %>"><%= property.name %></a></h3>
-            <p>Category: <%= property.category %></p>
-            <p>Place: <%= property.place %></p>
+            <p>Category:<br><%= property.category %></p>
+            <p>Place:<br> <%= property.place %></p>
+            <p>Contacts:<br> <%= property.contacts %></p>
             </div>
           </div>
           <div class="flip-card-back">
             <div class="property">
             <h3><a href="/properties/<%= property.id %>"><%= property.name %></a></h3>
-            <p>Address: <%= property.address %></p>
-            <p>Booking platform: <%= property.booking_platform %></p>
-            <p>Sleeps: <%= property.sleeps %></p>
-            <p>Daily fee: <%= property.daily_fee %></p>
-            <p>Contacts: <%= property.contacts %></p>
+            <p>Address:<br> <%= property.address %></p>
+            <p>Booking platform:<br> <%= property.booking_platform %></p>
+            <p>Sleeps:<br> <%= property.sleeps %></p>
+            <p>Daily fee:<br> £<%= property.daily_fee %></p>
             </div>
           </div>
         </div>
