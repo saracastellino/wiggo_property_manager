@@ -5,7 +5,6 @@ class Property
   attr_reader :id
   attr_accessor :name, :category, :address, :place, :booking_platform, :sleeps, :daily_fee, :contacts
 
-
   def initialize( properties )
     @id = properties['id'].to_i if properties['id']
     @name = properties['name']

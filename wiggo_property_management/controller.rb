@@ -56,8 +56,9 @@ get '/guests/new' do
 end
 
 post '/guests' do
-  Guest.new(params).save
-  redirect to '/guests'
+  @guest = Guest.new( params )
+  @guest.save()
+  erb( :create_guest )
 end
 
 get '/guests/:id' do

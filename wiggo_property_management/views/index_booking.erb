@@ -2,9 +2,9 @@
   <main class="flex-item main">
     <h2>.booking</h2>
 
-    <a href="/bookings/new" class="button">add a booking</a>
+    <a href="/bookings/new" class="button">add a booking now</a>
 
-    <div id="booking-wrapper">
+    <div id="wrapper">
       <% @bookings.each do |booking| %>
       <div class="cardCont">
       <div class="flip-card">
@@ -12,6 +12,8 @@
       <div class="flip-card-front">
       <div class="booking">
         <h3><a href="/bookings/<%= booking.id %>"><%= booking.property_id %></a></h3>
+<!-- < #SIMILAR TO < < guest.id >">< guest.guest_name > -->
+
         <p>Guest:<br> <%= booking.guest_id %></p>
         <p>Pax:<br> <% booking.pax %>
           <p>Nights: <% booking.nights %></p>

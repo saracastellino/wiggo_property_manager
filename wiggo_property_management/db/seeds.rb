@@ -30,9 +30,20 @@ property3.save
 property4.save
 property5.save
 
-booking1 = Booking.new({"guest_id" => guest1.id, "property_id" => property1.id, "pax" => 6, "check_in_date" => "Jul 4 2020", "check_out_date" => "Jul 31 2020", "nights" => 27, "total_earning" => 7000})
+booking1 = Booking.new({"guest_id" => guest1.id, "property_id" => property1.id, "pax" => 6, "check_in_date" => "Jul 4 2020", "check_out_date" => "Jul 31 2020", "nights" => 27, "total_earning" => 5400})
+# "total_earning" => booking1.total_earning})
+# booking1 = Booking.new({"guest_id" => guest2.id, "property_id" => property1.id, "pax" => 6, "check_in_date" => "Jul 4 2020", "check_out_date" => "Jul 31 2020", "nights" => 27, "total_earning" => 7000})
+# "total_earning" => booking1.total_earning})
+booking2 = Booking.new({"guest_id" => guest4.id, "property_id" => property2.id, "pax" => 7, "check_in_date" => "Jul 4 2020", "check_out_date" => "Jul 31 2020", "nights" => 27, "total_earning" => 7425})
+# "total_earning" => booking1.total_earning})
+booking3 = Booking.new({"guest_id" => guest5.id, "property_id" => property4.id, "pax" => 3, "check_in_date" => "Jul 4 2020", "check_out_date" => "Jul 31 2020", "nights" => 27, "total_earning" => 3375})
+# "total_earning" => booking1.total_earning})
+booking4 = Booking.new({"guest_id" => guest3.id, "property_id" => property3.id, "pax" => 3, "check_in_date" => "Jul 4 2020", "check_out_date" => "Jul 31 2020", "nights" => 27, "total_earning" => 2700})
 # "total_earning" => booking1.total_earning})
 booking1.save
+booking2.save
+booking3.save
+booking4.save
 
 guest4.documents = "Driving license"
 guest4.update

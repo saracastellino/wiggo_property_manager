@@ -39,40 +39,35 @@ header {
   grid-area: 1 / 1 / span 1 / span 9;
 }
 
-#home-item {
-  font-family: Bhavuka;
-  color: #FFE066;
-  font-size: 6vw;
-  font-weight: 600;
-  padding-top: 0px;
-  margin-top: 0px;
-
-}
 
 nav {
   font-size: 1.3vw;
   list-style-type: none;
+  text-decoration: none;
   display: flex;
   justify-content: flex-start;
 }
 
 li {
-  color: #FFE066;
   margin-left: 30px;
   padding-right: 30px;
   margin-top: 10px;
-  text-decoration: none;
 }
 
 nav a {
   text-decoration: none;
-  color: #FFE066;
+  color: grey;
 }
 
-a {
-  text-decoration: none;
+#home-item {
+  font-family: Bhavuka;
+  color: grey;
+  font-size: 5vw;
+  font-weight: bolder;
+  /* padding-top: 0px;
+  margin-top: 0px; */
+  float: right;
 }
-
 
 #logo {
   font-family: Bhavuka;
@@ -85,7 +80,23 @@ a {
   margin-bottom: 10px;
 }
 
+.page_title {
+  grid-area: 2 / 3;
+}
+
+a {
+  text-decoration: none;
+}
+
 h5 {
+  color: #50514F;
+  font-size: 2vw;
+  margin-right: auto;
+  margin-left: 30px;
+  margin-top: 1px;
+}
+
+h4 {
   color: #50514F;
   font-size: 2vw;
   margin-right: auto;
@@ -97,18 +108,18 @@ h2 {
   font-family: Bhavuka;
   color: #247BA0;
   font-size: 7vw;
-  display: flex;
-  justify-content: center;
-  flex-flow: wrap;
-}
-
-.page_title {
-  grid-area: 2 / 3;
+  margin-left: 30px;
 }
 
 p {
   color: grey;
   font-size: 1.5vw;
+  display: flex;
+  justify-content: center;
+  flex-flow: wrap;
+}
+
+#wrapper {
   display: flex;
   justify-content: center;
   flex-flow: wrap;
