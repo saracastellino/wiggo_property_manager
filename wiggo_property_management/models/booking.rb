@@ -69,8 +69,8 @@ class Booking
     return properties
   end
 
-  # def total_earning(nights, property)
-  #   total_earning = @nights * property.daily_fee
-  # end
+  def total_earning(nights, property)
+    total_earning = @nights * property.daily_fee
+  end
 
 end

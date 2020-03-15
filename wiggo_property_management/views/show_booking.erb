@@ -1,0 +1,16 @@
+<section class="flex-container">
+  <main class="flex-item main">
+
+    <h2 class="page_title"><%= property.name %></h2>
+
+<p>Guest name: <%= guest.name %></p>
+<p>Pax: <%= @booking.pax %></p>
+<p>Check in: <%= @booking.check_in_date %></p>
+<p>Check out: <%= @booking.check_out_date %></p>
+<p>Nights: <%= @booking.nights %></p>
+<p>Total earning: <%= @booking.total_earning %></p>
+
+<a href="/bookings/<%= @booking.id %>/edit" class="button">Edit</a>
+<form action="/bookings/<%= @booking.id %>/delete" method="POST"><input type="submit" value="Delete" class="button"></form>
+</main>
+</section>

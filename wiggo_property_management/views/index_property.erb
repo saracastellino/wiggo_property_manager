@@ -2,6 +2,17 @@
   <main class="flex-item main">
     <h2>.properties</h2>
 
+    <label>
+       Sort by:
+       <select name="property_id">
+         <% for property in @properties %>
+         <option value="<%= property.name %>">Name</option>
+         <option value="<%= property.category %>">Category</option>
+         <option value="<%= property.place %>">Place</option>
+         <% end %>
+       </select>
+     </label>
+
   <a href="/properties/new" class="button">add a property</a>
 
     <div id="property-wrapper">
@@ -32,6 +43,4 @@
         </div>
     </div>
   </main>
-  <footer class="flex-item footer">Wiggo | Property management
-    Palo Alto 3000 Tannery Way Santa Clara, CA 95054.</footer>
 </section>

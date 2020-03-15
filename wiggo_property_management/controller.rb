@@ -2,7 +2,7 @@ require('sinatra')
 require('sinatra/contrib/all')
 require_relative('models/guest')
 require_relative('models/property')
-# require_relative('models/booking')
+require_relative('models/booking')
 also_reload('./models/*')
 
 get '/home' do
