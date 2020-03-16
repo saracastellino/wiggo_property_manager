@@ -6,7 +6,7 @@ require('pry')
 
 Guest.delete_all
 Property.delete_all
-# Booking.delete_all
+Booking.delete_all
 
 guest1 = Guest.new({"name" => "AXL", "last_name" => "Rose", "nationality" => "American", "dob" => "Feb 6 1965", "documents" => "Driving licence", "contacts" => "+1 999 444 222 - 29500 Heathercliff Rd SPACE 194, Malibu, CA 90265"})
 guest2 = Guest.new({"name" => "Slash", "last_name" => "Hudson", "nationality" => "British/American", "dob" => "Jul 23 1965", "documents" => "Passport", "contacts" => "+1 999 333 222 - 7239 Van Nuys Blvd. Suite A-8. Van Nuys, CA 91405"})
@@ -49,6 +49,10 @@ guest4.documents = "Driving license"
 guest4.update
 property3.contacts = "+39 349080983"
 property3.update
+booking3.check_in_date = "Jul 5 2020"
+booking3.update
+booking3.nights = 26
+booking3.update
 
 binding.pry
 nil

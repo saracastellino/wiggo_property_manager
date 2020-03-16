@@ -1,0 +1,32 @@
+<section class="flex-container">
+  <main class="flex-item main">
+    <h2>add a booking.</h2>
+<form method="POST" action="/guests">
+  <div class="form-wrapper">
+
+    <form action="/bookings" method="post">
+    <label>
+    Select a property:
+      <select name="property_id">
+        <% for property in @properties %>
+        <option value="<%= property.id %>"><%= property.name %></option>
+        <% end %>
+      </select>
+    </label>
+
+    <label>
+      Select a guest:
+      <select name="guest_id">
+        <% for guest in @guests %>
+        <option value="<%= guest.id %>"><%= guest.name %></option>
+        <% end %>
+      </select>
+    </label>
+
+    <input class="btn btn--action" type='submit' value="done!">
+  </form>
+
+  </div>
+</form>
+</main>
+</section>

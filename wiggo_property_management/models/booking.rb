@@ -5,7 +5,6 @@ class Booking
   attr_reader :id
   attr_accessor :guest_id, :property_id, :pax, :check_in_date, :check_out_date, :nights, :total_earning
 
-
   def initialize( bookings )
     @id = bookings['id'].to_i if bookings['id']
     @guest_id = bookings['guest_id']
@@ -30,9 +29,8 @@ class Booking
   end
 
   def update
-    sql = "UPDATE bookings SET (guest_id, property_id, pax, check_in_date, check_out_date, nights, total_earning) = ($1, $2, $3, $4, $5, $6, $7)
-    WHERE id = $8"
-    values = [@guest_id, @property_id, @pax, @check_in_date, @check_out_date, @nights, @total_earning]
+    sql = "UPDATE bookings SET (guest_id, property_id, pax, check_in_date, check_out_date, nights, total_earning) = ($1, $2, $3, $4, $5, $6, $7) WHERE id = $8"
+    values = [@guest_id, @property_id, @pax, @check_in_date, @check_out_date, @nights, @total_earning, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -71,7 +69,7 @@ class Booking
 
   # ------------------------RETURN TOTAL EARNINGS CALCULATION
 
-  def total_earning(nights, property)
+  def calc_total_earning(nights, property)
     total_earning = (@nights * property.daily_fee) * 50 / 100 #(commissions)
   end
 

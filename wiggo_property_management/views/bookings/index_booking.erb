@@ -1,12 +1,12 @@
 <section class="flex-container">
   <main class="flex-item main">
-    <h2>.booking</h2>
+    <h2>.bookings</h2>
 
     <label>
        Sort by:
        <select name="booking_id">
          <% for booking in @bookings %>
-         <option value="<%= booking.name %>">Name</option>
+         <option value="<%= booking.property.name %>">Name</option>
          <option value="<%= booking.check_in_date %>">Check in date</option>
          <option value="<%= booking.check_out_date %>">check_out_date</option>
          <% end %>
@@ -22,10 +22,10 @@
     <div class="flip-card-inner">
       <div class="flip-card-front">
       <div class="booking">
-        <h3><a href="/bookings/<%= booking.id %>"><%= booking.property_id %></a></h3>
-<!-- < #SIMILAR TO < < guest.id >">< guest.guest_name > -->
+        <h3><a href="/bookings/<%= booking.id %>"><%= booking.property.name %></a></h3>
 
-        <p>Guest:<br> <%= booking.guest_id %></p>
+
+        <p>Guest:<br> <%= booking.guest.guest_name%></p>
         <p>Pax:<br> <% booking.pax %>
           <p>Nights: <% booking.nights %></p>
       </div>
