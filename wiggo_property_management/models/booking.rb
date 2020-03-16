@@ -93,4 +93,6 @@ class Booking
     property = SqlRunner.run(sql, values).first
     return Property.new(property)
   end
-  
+
+
+end
