@@ -85,4 +85,13 @@ class Guest
      return Property.map_items(properties)
    end
 
+ # ------------------CREATE A BOOKINGS METHOD TO SEE GUESTS' BOOKINGS
+
+ def bookings()
+   sql = "SELECT * FROM bookings where guest_id = $1"
+   values = [@id]
+   bookings = SqlRunner.run(sql, values)
+   return bookings.map{|booking| Booking.new(bookings)}
+ end
+
 end

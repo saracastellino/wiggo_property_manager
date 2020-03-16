@@ -82,7 +82,7 @@ class Property
      return Property.map_items(properties)
    end
 
- # ------------------------CALCULATING TOTAL EARNING FROM A PROPERTY
+ # ------------------CREATE A BOOKINGS METHOD TO SEE GUESTS' BOOKINGS
 
   def bookings()
     sql = "SELECT * FROM bookings where property_id = $1"
@@ -90,6 +90,8 @@ class Property
     bookings = SqlRunner.run(sql, values)
     return bookings.map{|booking| Booking.new(bookings)}
   end
+
+  # ------------------------CALCULATING TOTAL EARNING FROM A PROPERTY
 
    def bookings_total_earning
      bookings = property.bookings
