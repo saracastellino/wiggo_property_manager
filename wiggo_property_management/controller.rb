@@ -5,8 +5,8 @@ require_relative('models/property')
 require_relative('models/booking')
 also_reload('./models/*')
 
-get '/home' do
-  erb(:home)
+get '/' do
+  erb(:index)
 end
 
 get '/properties' do

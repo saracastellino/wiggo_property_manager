@@ -21,7 +21,7 @@ class Property
     sql = "INSERT INTO properties (name, category, address, place, booking_platform, sleeps, daily_fee, contacts) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING id"
     values = [@name, @category, @address, @place, @booking_platform, @sleeps, @daily_fee, @contacts]
     properties_data = SqlRunner.run(sql, values)
-    return properties_data.first['id'].to_i
+    @id = properties_data.first['id'].to_i
   end
 
   def self.delete_all

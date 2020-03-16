@@ -10,7 +10,7 @@ CREATE TABLE properties (
   address VARCHAR(255),
   place VARCHAR(255),
   booking_platform VARCHAR(255),
-  sleeps VARCHAR(255),
+  sleeps INT,
   daily_fee INT,
   contacts VARCHAR(255)
 );

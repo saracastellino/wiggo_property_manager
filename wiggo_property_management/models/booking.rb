@@ -21,7 +21,7 @@ class Booking
     sql = "INSERT INTO bookings (guest_id, property_id, pax, check_in_date, check_out_date, nights, total_earning) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING id;"
     values = [@guest_id, @property_id, @pax, @check_in_date, @check_out_date, @nights, @total_earning]
     bookings_data = SqlRunner.run(sql, values)
-    return bookings_data.first['id'].to_i
+    @id = bookings_data.first['id'].to_i
   end
 
   def self.delete_all()

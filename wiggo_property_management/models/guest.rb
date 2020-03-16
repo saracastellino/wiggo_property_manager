@@ -20,7 +20,7 @@ class Guest
     VALUES ($1, $2, $3, $4, $5, $6) RETURNING id"
     values = [@name, @last_name, @nationality, @dob, @documents, @contacts]
     guests_data = SqlRunner.run(sql, values)
-    return guests_data.first['id'].to_i
+    @id = guests_data.first['id'].to_i
   end
 
   def guest_name
