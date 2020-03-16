@@ -64,9 +64,8 @@ nav a {
   color: grey;
   font-size: 5vw;
   font-weight: bolder;
-  /* padding-top: 0px;
-  margin-top: 0px; */
-  float: right;
+  position: fixed;
+  left: 50%;
 }
 
 #logo {
