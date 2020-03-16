@@ -78,7 +78,7 @@ class Property
      ON bookings.guest_id = guests.id
      WHERE property_id = $1"
      values = [@id]
-     guests = SqlRunner.run(sql, values)
+     properties = SqlRunner.run(sql, values)
      return Property.map_items(properties)
    end
 
