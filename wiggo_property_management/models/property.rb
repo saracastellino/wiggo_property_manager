@@ -29,44 +29,67 @@ class Property
     SqlRunner.run(sql)
   end
 
-    def update
-      sql = "UPDATE properties SET (name, category, address, place, booking_platform, sleeps, daily_fee, contacts) = ($1, $2, $3, $4, $5, $6, $7, $8)
-      WHERE id = $9"
-      values = [@name, @category, @address, @place, @booking_platform, @sleeps, @daily_fee, @contacts, @id]
-      SqlRunner.run(sql, values)
-    end
+  def update
+    sql = "UPDATE properties SET (name, category, address, place, booking_platform, sleeps, daily_fee, contacts) = ($1, $2, $3, $4, $5, $6, $7, $8)
+    WHERE id = $9"
+    values = [@name, @category, @address, @place, @booking_platform, @sleeps, @daily_fee, @contacts, @id]
+    SqlRunner.run(sql, values)
+  end
 
-    def delete
-      sql = "DELETE FROM properties WHERE id = $1"
-      values = [@id]
-      SqlRunner.run(sql, values)
-    end
+  def delete
+    sql = "DELETE FROM properties WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
 
-    def self.all
-      sql = "SELECT * FROM properties"
-      property_data = SqlRunner.run(sql)
-      properties = map_items(property_data)
-      return properties
-    end
+  def self.all
+    sql = "SELECT * FROM properties"
+    property_data = SqlRunner.run(sql)
+    properties = map_items(property_data)
+    return properties
+  end
 
-    def self.map_items(property_data)
-      return property_data.map { |property| Property.new(property) }
-    end
+  def self.map_items(property_data)
+    return property_data.map { |property| Property.new(property) }
+  end
 
-    def self.find(id)
-      sql = "SELECT * FROM properties
-      WHERE id = $1"
-      values = [id]
-      result = SqlRunner.run(sql, values).first
-      property = Property.new(result)
-      return property
-    end
+  def self.find(id)
+    sql = "SELECT * FROM properties
+    WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values).first
+    property = Property.new(result)
+    return property
+  end
 
-    def self.sort_by_place
-      sql = "SELECT * FROM properties ORDER BY place ASC"
-      property_data = SqlRunner.run(sql)
-      properties = map_items(property_data)
-      return properties
-    end
+  def self.sort_by_place
+    sql = "SELECT * FROM properties ORDER BY place ASC"
+    property_data = SqlRunner.run(sql)
+    properties = map_items(property_data)
+    return properties
+  end
+
+# ------------------CREATE A GUESTS METHOD TO SEE PROPERTIES' GUESTS
+
+  def guests
+     sql = "SELECT guests.*
+     FROM guests
+     INNER JOIN bookings
+     ON bookings.guest_id = guests.id
+     WHERE property_id = $1"
+     values = [@id]
+     guests = SqlRunner.run(sql, values)
+     return Property.map_items(properties)
+   end
+
+ # ------------------------CALCULATING TOTAL EARNING FROM A PROPERTY
+
+   def bookings_total_earning
+     bookings = property.bookings
+     bookings_fees = bookings.map{|booking| booking.total_earning}
+     bookings_total_earned = bookings_fees.sum
+     return bookings_total_earning
+  end
+
 
 end

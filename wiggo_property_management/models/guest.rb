@@ -72,4 +72,17 @@ class Guest
     return guests
   end
 
+  # ------------------CREATE A PROPERTIES METHOD TO SEE GUESTS' PROPERTIES
+  #
+  def properties
+     sql = "SELECT properties.*
+     FROM properties
+     INNER JOIN bookings
+     ON bookings.property_id = properties.id
+     WHERE guest_id = $1"
+     values = [@id]
+     properties = SqlRunner.run(sql, values)
+     return Property.map_items(properties)
+   end
+
 end

@@ -69,8 +69,28 @@ class Booking
     return properties
   end
 
+  # ------------------------RETURN TOTAL EARNINGS CALCULATION
+
   def total_earning(nights, property)
-    total_earning = @nights * property.daily_fee
+    total_earning = (@nights * property.daily_fee) * 50 / 100 #(commissions)
   end
 
-end
+  # ------------------------RETURN GUEST OF A BOOKING
+  def guest
+    sql = "SELECT * FROM guests
+    WHERE id = $1"
+    values = [@guest_id]
+    guest = SqlRunner.run(sql, values).first
+    return Guest.new(guest)
+  end
+
+   # ------------------------RETURN PROPERTY OF A BOOKING/
+
+  def property
+    sql = "SELECT * FROM properties
+    WHERE id = $1"
+    values = [@property_id]
+    property = SqlRunner.run(sql, values).first
+    return Property.new(property)
+  end
+  

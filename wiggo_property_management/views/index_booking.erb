@@ -2,6 +2,17 @@
   <main class="flex-item main">
     <h2>.booking</h2>
 
+    <label>
+       Sort by:
+       <select name="booking_id">
+         <% for booking in @bookings %>
+         <option value="<%= booking.name %>">Name</option>
+         <option value="<%= booking.check_in_date %>">Check in date</option>
+         <option value="<%= booking.check_out_date %>">check_out_date</option>
+         <% end %>
+       </select>
+     </label>
+
     <a href="/bookings/new" class="button">add a booking now</a>
 
     <div id="wrapper">
