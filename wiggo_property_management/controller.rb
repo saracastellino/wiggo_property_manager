@@ -45,6 +45,11 @@ post '/properties/:id/delete' do
   property.delete
   erb( :delete_property )
 end
+#
+# post '/properties/guests' do
+#   guests = Property.guests
+#   erb( :property_guests )
+# end
 
 get '/guests' do
   @guests = Guest.sort_by_last_name
@@ -82,6 +87,11 @@ post '/guests/:id/delete' do
   guest.delete
   erb( :delete_guest )
 end
+#
+# post '/guests/properties' do
+#   properties = Guest.properties
+#   erb( :guest_properties )
+# end
 
 get '/bookings' do
   @bookings = Booking.sort_by_property
