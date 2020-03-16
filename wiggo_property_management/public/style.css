@@ -62,10 +62,10 @@ nav a {
 #home-item {
   font-family: Bhavuka;
   color: grey;
-  font-size: 5vw;
+  font-size: 2vw;
   font-weight: bolder;
   position: fixed;
-  left: 50%;
+  left: 33%;
 }
 
 #logo {
