@@ -84,6 +84,13 @@ class Property
 
  # ------------------------CALCULATING TOTAL EARNING FROM A PROPERTY
 
+  def bookings()
+    sql = "SELECT * FROM bookings where property_id = $1"
+    values = [@id]
+    bookings = SqlRunner.run(sql, values)
+    return bookings.map{|booking| Booking.new(bookings)}
+  end
+
    def bookings_total_earning
      bookings = property.bookings
      bookings_fees = bookings.map{|booking| booking.total_earning}
