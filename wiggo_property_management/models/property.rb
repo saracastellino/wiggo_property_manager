@@ -78,17 +78,18 @@ class Property
      ON bookings.guest_id = guests.id
      WHERE property_id = $1"
      values = [@id]
-     properties = SqlRunner.run(sql, values)
-     return Property.map_items(properties)
+     guests = SqlRunner.run(sql, values)
+     return Guest.map_items(guests)
    end
 
- # ------------------CREATE A BOOKINGS METHOD TO SEE GUESTS' BOOKINGS
 
-  def bookings()
-    sql = "SELECT * FROM bookings where property_id = $1"
+ # ------------------CREATE A BOOKINGS METHOD TO SEE PROPERTIES' BOOKINGS
+
+  def bookings
+    sql = "SELECT * FROM bookings WHERE property_id = $1"
     values = [@id]
     bookings = SqlRunner.run(sql, values)
-    return bookings.map{|booking| Booking.new(bookings)}
+    return Booking.map_items(bookings)
   end
 
   # ------------------------CALCULATING TOTAL EARNING FROM A PROPERTY

@@ -20,30 +20,31 @@
 
     <div id="wrapper">
       <% @properties.each do |property| %>
-      <div class="cardCont">
-        <div class="flip-card">
+        <div class="cardCont">
+          <div class="flip-card">
             <div class="flip-card-inner">
-                <div class="flip-card-front">
-            <div class="property">
-            <h3><a href="/properties/<%= property.id %>"><%= property.name %></a></h3>
-            <p>Category:<br><%= property.category %></p>
-            <p>Place:<br> <%= property.place %></p>
-            <p>Contacts:<br> <%= property.contacts %></p>
+              <div class="flip-card-front">
+                <div class="property">
+                  <h3><a href="/properties/<%= property.id %>"><%= property.name %></a></h3>
+                  <p>Category:<br><%= property.category %></p>
+                  <p>Place:<br> <%= property.place %></p>
+                  <p>Contacts:<br> <%= property.contacts %></p>
+                </div>
+              </div>
+              <div class="flip-card-back">
+                <div class="property">
+                  <h3><a href="/properties/<%= property.id %>"><%= property.name %></a></h3>
+                  <p>Address:<br> <%= property.address %></p>
+                  <p>Booking platform:<br> <%= property.booking_platform %></p>
+                  <p>Sleeps:<br> <%= property.sleeps %></p>
+                  <p>Daily fee:<br> £<%= property.daily_fee %></p>
+                  <a href="/properties/:id/guests" class="button">next guests</a>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="flip-card-back">
-            <div class="property">
-            <h3><a href="/properties/<%= property.id %>"><%= property.name %></a></h3>
-            <p>Address:<br> <%= property.address %></p>
-            <p>Booking platform:<br> <%= property.booking_platform %></p>
-            <p>Sleeps:<br> <%= property.sleeps %></p>
-            <p>Daily fee:<br> £<%= property.daily_fee %></p>
-            </div>
-          </div>
         </div>
-        </div>
-        <% end %>
-        </div>
+      <% end %>
     </div>
+
   </main>
 </section>

@@ -87,11 +87,11 @@ class Guest
 
  # ------------------CREATE A BOOKINGS METHOD TO SEE GUESTS' BOOKINGS
 
- def bookings()
-   sql = "SELECT * FROM bookings where guest_id = $1"
+ def bookings
+   sql = "SELECT * FROM bookings WHERE guest_id = $1"
    values = [@id]
    bookings = SqlRunner.run(sql, values)
-   return bookings.map{|booking| Booking.new(bookings)}
+   return Booking.map_items(bookings)
  end
 
 end

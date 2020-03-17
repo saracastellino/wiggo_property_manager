@@ -32,7 +32,7 @@ end
 
 post '/properties/:id' do
   Property.new(params).update
-  rb( :"properties/update_property" )
+  erb( :"properties/update_property" )
 end
 
 post '/properties/:id/delete' do
@@ -40,8 +40,8 @@ post '/properties/:id/delete' do
   property.delete
   erb(:"properties/delete_property")
 end
-#
-# post '/properties/guests' do
-#   guests = Property.guests
-#   erb( :property_guests )
-# end
+
+get '/properties/:id/guests' do
+  @guests = Property.guests(params['id'])
+  erb( :"properties/property_guests" )
+end
