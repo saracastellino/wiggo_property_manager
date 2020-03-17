@@ -1,9 +1,10 @@
 <section class="flex-container">
   <main class="flex-item main">
-    <h4>update your <br>booking info.</h4>
+    <h4>update your booking info.</h4>
+
 
     <form method="post" action="/bookings/<%= @booking.id %>">
-
+      <div class="form-wrapper">
       <div class="form-el">
       <label for="property_selection">Select property:</label>
       <select name="property_id" id="property_selection" selected="<%= @booking.property_id  %>">
@@ -15,8 +16,9 @@
           <% end %>
         <% end %>
       </select>
+    </div>
 
-
+    <div class="form-el">
       <label for="property_selection">Select guest:</label>
       <select name="guest"_id" id="guest_selection" selected="<%= @booking.guest_id  %>">
         <% @guests.each do |guest| %>
@@ -27,7 +29,9 @@
           <% end %>
         <% end %>
       </select>
+    </div>
 
+    <div class="form-el">
       <label for="pax-field">Pax:</label>
       <input
       type="text"
@@ -35,8 +39,9 @@
       id="pax-field"
       value="<%= @booking.pax %>"
       />
-      <br>
+    </div>
 
+    <div class="form-el">
       <label for="check_in_date-field">Check in date:</label>
       <input
       type="text"
@@ -44,8 +49,9 @@
       id="check_in_date-field"
       value="<%= @booking.check_in_date %>"
       />
-      <br>
+    </div>
 
+    <div class="form-el">
       <label for="check_out_date-field">Check out date:</label>
       <input
       type="text"
@@ -53,8 +59,9 @@
       id="check_out_date-field"
       value="<%= @booking.check_out_date %>"
       />
-      <br>
+    </div>
 
+    <div class="form-el">
       <label for="nights-field">Nights:</label>
       <input
       type="number"
@@ -62,8 +69,9 @@
       id="nights-field"
       value="<%= @booking.nights %>"
       />
-      <br>
+    </div>
 
+    <div class="form-el">
       <label for="total_earning-field">Total earning:</label>
       <input
       type="number"
@@ -71,12 +79,12 @@
       id="total_earning-field"
       value="<%= @booking.total_earning %>"
       />
-      <br>
+    </div>
 
       <input type='submit' class="button" value="update!">
 
     </div>
-    </form>
+  </form>
 
 </main>
 </section>

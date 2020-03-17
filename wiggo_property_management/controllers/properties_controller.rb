@@ -41,8 +41,8 @@ post '/properties/:id/delete' do
   erb(:"properties/delete_property")
 end
 
-get '/properties/:id/guests' do
-  @guests = Guest.all
-  Property.find(params['id']).guests
+post '/properties/:id/guests' do
+  property = Property.find(params['id'])
+  @guests = property.guests
   erb( :"properties/property_guests" )
 end

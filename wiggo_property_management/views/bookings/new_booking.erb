@@ -1,10 +1,11 @@
 <section class="flex-container">
   <main class="flex-item main">
     <h2>add a booking.</h2>
-<form method="POST" action="/guests">
+<form method="POST" action="/bookings">
   <div class="form-wrapper">
 
     <form action="/bookings" method="post">
+    <div class="form-el">
     <label>
     Select a property:
       <select name="property_id">
@@ -13,7 +14,9 @@
         <% end %>
       </select>
     </label>
+    </div>
 
+    <div class="form-el">
     <label>
       Select a guest:
       <select name="guest_id">
@@ -22,8 +25,32 @@
         <% end %>
       </select>
     </label>
+    </div>
 
+    <div class="form-el">
+    <label for="pax">Pax:</label>
+    <input type="text" name="pax" id="pax"/>
+    </div>
 
+    <div class="form-el">
+    <label for="check_in_date">Check in date:</label>
+    <input type="text" name="check_in_date" id="check_in_date"/>
+    </div>
+
+    <div class="form-el">
+    <label for="check_out_date">Check out date:</label>
+    <input type="text" name="check_out_date" id="check_out_date"/>
+    </div>
+
+    <div class="form-el">
+    <label for="nights">Nights:</label>
+    <input type="number" name="nights" id="nights"/>
+    </div>
+
+    <div class="form-el">
+    <label for="total_earning">Total earning:</label>
+    <input type="number" name="total_earning" id="total_earning"/>
+    </div>
 
     <input class="btn btn--action" type='submit' value="done!">
   </form>

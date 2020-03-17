@@ -2,7 +2,7 @@
   <main class="flex-item main">
     <h2>.properties</h2>
 
-    <label>
+    <label class="label_sort">
        Sort by:
        <select name="property_id">
          <% for property in @properties %>
@@ -38,7 +38,7 @@
                   <p>Booking platform:<br> <%= property.booking_platform %></p>
                   <p>Sleeps:<br> <%= property.sleeps %></p>
                   <p>Daily fee:<br> £<%= property.daily_fee %></p>
-                  <a href="/properties/guests" class="button">next guests</a>
+                  <a href="/properties/:id/guests" class="button">pending guests</a>
                 </div>
               </div>
             </div>
