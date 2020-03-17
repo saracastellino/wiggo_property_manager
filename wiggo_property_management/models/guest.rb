@@ -27,6 +27,21 @@ class Guest
     return "#{@name} #{@last_name}"
   end
 
+  def guest_age
+    dob = self.dob
+    if dob != nil
+      now = Date.today
+      years = now.year - dob.year
+    else
+      return "No Date of Birth"
+    end
+  end
+
+  # def guest_can_book
+  #   if self.guest_age < 18
+  #
+  # end
+
   def self.delete_all
     sql = "DELETE FROM guests;"
     SqlRunner.run(sql)

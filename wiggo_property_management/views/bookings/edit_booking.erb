@@ -23,9 +23,9 @@
       <select name="guest"_id" id="guest_selection" selected="<%= @booking.guest_id  %>">
         <% @guests.each do |guest| %>
           <% if guest.id == @booking.guest_id %>
-            <option value=<%= guest.id %> selected><%= guest.name %></option>
+            <option value=<%= guest.id %> selected><%= guest.guest_name %></option>
           <% else %>
-            <option value=<%= guest.id %>><%= guest.name %></option>
+            <option value=<%= guest.id %>><%= guest.guest_name %></option>
           <% end %>
         <% end %>
       </select>
@@ -68,16 +68,6 @@
       name="nights"
       id="nights-field"
       value="<%= @booking.nights %>"
-      />
-    </div>
-
-    <div class="form-el">
-      <label for="total_earning-field">Total earning:</label>
-      <input
-      type="number"
-      name="total_earning"
-      id="total_earning-field"
-      value="<%= @booking.total_earning %>"
       />
     </div>
 

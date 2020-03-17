@@ -30,8 +30,7 @@ CREATE TABLE bookings (
   guest_id INT REFERENCES guests(id) ON DELETE CASCADE,
   property_id INT REFERENCES properties(id) ON DELETE CASCADE,
   pax INT,
-  check_in_date DATE,
-  check_out_date DATE,
-  nights INT,
-  total_earning INT
+  check_in_date VARCHAR(255),
+  check_out_date VARCHAR(255),
+  nights INT
 );

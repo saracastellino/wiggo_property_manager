@@ -1,14 +1,14 @@
 require_relative('../models/guest')
 require_relative('../models/property')
 require_relative('../models/booking')
-
+require('date')
 require('pry')
 
 Guest.delete_all
 Property.delete_all
 Booking.delete_all
 
-guest1 = Guest.new({"name" => "AXL", "last_name" => "Rose", "nationality" => "American", "dob" => "Feb 6 1965", "documents" => "Driving licence", "contacts" => "+1 999 444 222 - 29500 Heathercliff Rd SPACE 194, Malibu, CA 90265"})
+guest1 = Guest.new({"name" => "AXL", "last_name" => "Rose", "nationality" => "American", "dob" => Date.new(1965-2-6), "documents" => "Driving licence", "contacts" => "+1 999 444 222 - 29500 Heathercliff Rd SPACE 194, Malibu, CA 90265"})
 guest2 = Guest.new({"name" => "Slash", "last_name" => "Hudson", "nationality" => "British/American", "dob" => "Jul 23 1965", "documents" => "Passport", "contacts" => "+1 999 333 222 - 7239 Van Nuys Blvd. Suite A-8. Van Nuys, CA 91405"})
 guest3 = Guest.new({"name" => "Duff", "last_name" => "McKagan", "nationality" => "American", "dob" => "Feb 5 1964", "documents" => "Driving licence", "contacts" => "+1 999 333 222 - 7239 Van Nuys Blvd. Suite A-8. Van Nuys, CA 91405"})
 guest4 = Guest.new({"name" => "Izzy", "last_name" => "Stradlin", "nationality" => "American", "dob" => "Apr 8 1965", "documents" => "Passport", "contacts" => "+1 765 276 7700 - West Lafayette, Indiana 47906"})
@@ -30,16 +30,10 @@ property3.save
 property4.save
 property5.save
 
-booking1 = Booking.new({"guest_id" => guest1.id, "property_id" => property1.id, "pax" => 6, "check_in_date" => "Jul 4 2020", "check_out_date" => "Jul 31 2020", "nights" => 27, "total_earning" => 5400})
-# "total_earning" => booking1.total_earning})
-# booking1 = Booking.new({"guest_id" => guest2.id, "property_id" => property1.id, "pax" => 6, "check_in_date" => "Jul 4 2020", "check_out_date" => "Jul 31 2020", "nights" => 27, "total_earning" => 7000})
-# "total_earning" => booking1.total_earning})
-booking2 = Booking.new({"guest_id" => guest4.id, "property_id" => property2.id, "pax" => 7, "check_in_date" => "Jul 4 2020", "check_out_date" => "Jul 31 2020", "nights" => 27, "total_earning" => 7425})
-# "total_earning" => booking1.total_earning})
-booking3 = Booking.new({"guest_id" => guest5.id, "property_id" => property4.id, "pax" => 3, "check_in_date" => "Jul 4 2020", "check_out_date" => "Jul 31 2020", "nights" => 27, "total_earning" => 3375})
-# "total_earning" => booking1.total_earning})
-booking4 = Booking.new({"guest_id" => guest3.id, "property_id" => property3.id, "pax" => 3, "check_in_date" => "Jul 4 2020", "check_out_date" => "Jul 31 2020", "nights" => 27, "total_earning" => 2700})
-# "total_earning" => booking1.total_earning})
+booking1 = Booking.new({"guest_id" => guest1.id, "property_id" => property1.id, "pax" => 6, "check_in_date" => "Jul 4 2020", "check_out_date" => "Jul 31 2020", "nights" => 27})
+booking2 = Booking.new({"guest_id" => guest4.id, "property_id" => property2.id, "pax" => 7, "check_in_date" => "Jul 4 2020", "check_out_date" => "Jul 31 2020", "nights" => 27})
+booking3 = Booking.new({"guest_id" => guest5.id, "property_id" => property4.id, "pax" => 3, "check_in_date" => "Jul 4 2020", "check_out_date" => "Jul 31 2020", "nights" => 27})
+booking4 = Booking.new({"guest_id" => guest3.id, "property_id" => property3.id, "pax" => 3, "check_in_date" => "Jul 4 2020", "check_out_date" => "Jul 31 2020", "nights" => 27})
 booking1.save
 booking2.save
 booking3.save

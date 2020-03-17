@@ -3,7 +3,7 @@ require_relative('../db/sql_runner')
 class Booking
 
   attr_reader :id
-  attr_accessor :guest_id, :property_id, :pax, :check_in_date, :check_out_date, :nights, :total_earning
+  attr_accessor :guest_id, :property_id, :pax, :check_in_date, :check_out_date, :nights
 
   def initialize( bookings )
     @id = bookings['id'].to_i if bookings['id']
@@ -13,12 +13,11 @@ class Booking
     @check_in_date = bookings['check_in_date']
     @check_out_date = bookings['check_out_date']
     @nights = bookings['nights'].to_i
-    @total_earning = bookings['total_earning'].to_i
   end
 
   def save
-    sql = "INSERT INTO bookings (guest_id, property_id, pax, check_in_date, check_out_date, nights, total_earning) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING id;"
-    values = [@guest_id, @property_id, @pax, @check_in_date, @check_out_date, @nights, @total_earning]
+    sql = "INSERT INTO bookings (guest_id, property_id, pax, check_in_date, check_out_date, nights) VALUES ($1, $2, $3, $4, $5, $6) RETURNING id;"
+    values = [@guest_id, @property_id, @pax, @check_in_date, @check_out_date, @nights]
     bookings_data = SqlRunner.run(sql, values)
     @id = bookings_data.first['id'].to_i
   end
@@ -29,8 +28,8 @@ class Booking
   end
 
   def update
-    sql = "UPDATE bookings SET (guest_id, property_id, pax, check_in_date, check_out_date, nights, total_earning) = ($1, $2, $3, $4, $5, $6, $7) WHERE id = $8"
-    values = [@guest_id, @property_id, @pax, @check_in_date, @check_out_date, @nights, @total_earning, @id]
+    sql = "UPDATE bookings SET (guest_id, property_id, pax, check_in_date, check_out_date, nights) = ($1, $2, $3, $4, $5, $6) WHERE id = $7"
+    values = [@guest_id, @property_id, @pax, @check_in_date, @check_out_date, @nights, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -71,6 +70,7 @@ class Booking
 
   def calc_total_earning(nights, property)
     total_earning = (@nights * property.daily_fee) * 50 / 100 #(commissions)
+    return total_earning
   end
 
   # ------------------------RETURN GUEST OF A BOOKING
