@@ -21,7 +21,7 @@
       Select a guest:
       <select name="guest_id">
         <% for guest in @guests %>
-        <option value="<%= guest.id %>"><%= guest.name %></option>
+        <option value="<%= guest.id %>"><%= guest.guest_name %></option>
         <% end %>
       </select>
     </label>
@@ -52,7 +52,7 @@
     <input type="number" name="total_earning" id="total_earning"/>
     </div>
 
-    <input class="btn btn--action" type='submit' value="done!">
+    <input type='submit' class="button" value="done!">
   </form>
 
   </div>

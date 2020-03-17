@@ -20,7 +20,7 @@ CREATE TABLE guests (
   name VARCHAR(255),
   last_name VARCHAR(255),
   nationality VARCHAR(255),
-  dob VARCHAR(255),
+  dob DATE,
   documents VARCHAR(255),
   contacts VARCHAR(255)
 );
@@ -30,8 +30,8 @@ CREATE TABLE bookings (
   guest_id INT REFERENCES guests(id) ON DELETE CASCADE,
   property_id INT REFERENCES properties(id) ON DELETE CASCADE,
   pax INT,
-  check_in_date VARCHAR(255),
-  check_out_date VARCHAR(255),
+  check_in_date DATE,
+  check_out_date DATE,
   nights INT,
   total_earning INT
 );
