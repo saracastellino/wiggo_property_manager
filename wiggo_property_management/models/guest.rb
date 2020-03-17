@@ -97,7 +97,9 @@ class Guest
      WHERE guest_id = $1"
      values = [@id]
      properties = SqlRunner.run(sql, values)
-     return Property.map_items(properties)
+     property_data = Property.map_items(properties)
+     # return guests_data.fetch[:last_name]
+     return property_data.values_at("name")
    end
 
  # ------------------CREATE A BOOKINGS METHOD TO SEE GUESTS' BOOKINGS

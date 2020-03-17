@@ -79,7 +79,9 @@ class Property
      WHERE property_id = $1"
      values = [@id]
      guests = SqlRunner.run(sql, values)
-     return Guest.map_items(guests)
+     guests_data = Guest.map_items(guests)
+     # return guests_data.fetch[:last_name]
+     return guests_data.values_at("last_name")
    end
 
 
