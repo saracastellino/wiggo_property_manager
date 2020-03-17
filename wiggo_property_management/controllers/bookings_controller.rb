@@ -11,6 +11,8 @@ get '/bookings' do
 end
 
 get '/bookings/new' do
+  @guests = Guest.all
+  @properties = Property.all
   erb(:"bookings/new_booking")
 end
 
@@ -26,6 +28,8 @@ get '/bookings/:id' do
 end
 
 get '/bookings/:id/edit' do
+  @guests = Guest.all
+  @properties = Property.all
   @booking = Booking.find(params['id'])
   erb(:"bookings/edit_booking")
 end
