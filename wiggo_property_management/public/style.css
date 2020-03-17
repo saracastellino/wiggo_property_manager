@@ -97,17 +97,17 @@ h5 {
 
 h4 {
   color: #50514F;
-  font-size: 2vw;
+  font-size: 3vw;
   margin-right: auto;
   margin-left: 30px;
-  margin-top: 1px;
+  margin-top: 100px;
 }
 
 h2 {
   font-family: Bhavuka;
   color: #247BA0;
   font-size: 7vw;
-  margin-left: 30px;
+  margin-left: 120px;
 }
 
 p {
@@ -192,7 +192,7 @@ form {
   border-radius: 4px;
   background-color: #FFE066;
   border: none;
-  color: #FFFFFF;
+  color: #247BA0;
   text-align: center;
   font-size: 1vw;
   padding: 10px;

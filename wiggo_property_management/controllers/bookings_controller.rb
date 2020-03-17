@@ -3,7 +3,7 @@ require('sinatra/contrib/all')
 require_relative('../models/guest')
 require_relative('../models/property')
 require_relative('../models/booking')
-also_reload('./models/*')
+also_reload('../models/*')
 
 get '/bookings' do
   @bookings = Booking.sort_by_property
@@ -27,13 +27,12 @@ end
 
 get '/bookings/:id/edit' do
   @booking = Booking.find(params['id'])
-  erb(:"bookings/edit")
+  erb(:"bookings/edit_booking")
 end
 
 post '/bookings/:id' do
-  booking = Booking.new(params)
-  booking.update
-  redirect to "/bookings/#{params['id']}"
+  Booking.new(params).update
+  erb(:"bookings/update_booking")
 end
 
 post '/bookings/:id/delete' do

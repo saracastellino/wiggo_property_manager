@@ -26,15 +26,16 @@
 
 
         <p>Guest:<br> <%= booking.guest.guest_name%></p>
-        <p>Pax:<br> <% booking.pax %>
-          <p>Nights: <% booking.nights %></p>
+        <p>Pax:<br> <%= booking.pax %>
+          <p>Nights:<br> <%= booking.nights %></p>
       </div>
     </div>
     <div class="flip-card-back">
       <div class="booking">
-        <h3><a href="/bookings/<%= booking.id %>"><%= booking.property_id %></a></h3>
+          <h3><a href="/bookings/<%= booking.id %>"><%= booking.property.name %></a></h3>
         <p>Check in:<br> <%= booking.check_in_date %></p>
         <p>Check out:<br> <%= booking.check_out_date %></p>
+        <p>Total earning:<br> <%= booking.total_earning %></p>
       </div>
         </div>
       </div>

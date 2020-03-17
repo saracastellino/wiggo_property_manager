@@ -27,13 +27,12 @@ end
 
 get '/guests/:id/edit' do
   @guest = Guest.find(params['id'])
-  erb(:"guests/edit")
+  erb(:"guests/edit_guest")
 end
 
 post '/guests/:id' do
-  guest = Guest.new(params)
-  Guest.update
-  redirect to "/guests/#{params['id']}"
+  Guest.new(params).update
+  erb( :"guests/update_guest" )
 end
 
 post '/guests/:id/delete' do
@@ -44,5 +43,5 @@ end
 #
 # post '/guests/properties' do
 #   properties = Guest.properties
-#   erb( :guest_properties )
+#   erb( :"/guest_properties" )
 # end
