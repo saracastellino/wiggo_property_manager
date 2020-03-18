@@ -29,7 +29,7 @@ Ruby, SQL, Sinatra, HTML.
 
 #### Code highlights
 
-![Method property.guests](images/booking_total_earning.png)
+![Method property.guests](../images/booking_total_earning.png)
 
 #### Styling
 
