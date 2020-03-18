@@ -30,8 +30,8 @@ class Guest
   def guest_age
     dob = self.dob
     if dob != nil
-      now = Date.today
-      years = now.year - dob.year
+      age = Date.today.year - dob.year
+      return age
     else
       return "No Date of Birth"
     end

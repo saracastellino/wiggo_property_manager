@@ -8,11 +8,11 @@ Guest.delete_all
 Property.delete_all
 Booking.delete_all
 
-guest1 = Guest.new({"name" => "AXL", "last_name" => "Rose", "nationality" => "American", "dob" => Date.new(1965-2-6), "documents" => "Driving licence", "contacts" => "+1 999 444 222 - 29500 Heathercliff Rd SPACE 194, Malibu, CA 90265"})
-guest2 = Guest.new({"name" => "Slash", "last_name" => "Hudson", "nationality" => "British/American", "dob" => "Jul 23 1965", "documents" => "Passport", "contacts" => "+1 999 333 222 - 7239 Van Nuys Blvd. Suite A-8. Van Nuys, CA 91405"})
-guest3 = Guest.new({"name" => "Duff", "last_name" => "McKagan", "nationality" => "American", "dob" => "Feb 5 1964", "documents" => "Driving licence", "contacts" => "+1 999 333 222 - 7239 Van Nuys Blvd. Suite A-8. Van Nuys, CA 91405"})
-guest4 = Guest.new({"name" => "Izzy", "last_name" => "Stradlin", "nationality" => "American", "dob" => "Apr 8 1965", "documents" => "Passport", "contacts" => "+1 765 276 7700 - West Lafayette, Indiana 47906"})
-guest5 = Guest.new({"name" => "Steven", "last_name" => "Adler", "nationality" => "American", "dob" => "Jan 22 1965", "documents" => "Passport", "contacts" => "10866 Wilshire Blvd., Los Angeles, California 90024"})
+guest1 = Guest.new({"name" => "AXL", "last_name" => "Rose", "nationality" => "American", "dob" => Date.new(1965, 2, 6), "documents" => "Driving licence", "contacts" => "+1 999 444 222 - 29500 Heathercliff Rd SPACE 194, Malibu, CA 90265"})
+guest2 = Guest.new({"name" => "Slash", "last_name" => "Hudson", "nationality" => "British/American", "dob" => Date.new(1965, 7, 23), "documents" => "Passport", "contacts" => "+1 999 333 222 - 7239 Van Nuys Blvd. Suite A-8. Van Nuys, CA 91405"})
+guest3 = Guest.new({"name" => "Duff", "last_name" => "McKagan", "nationality" => "American", "dob" => Date.new(1964, 2, 5), "documents" => "Driving licence", "contacts" => "+1 999 333 222 - 7239 Van Nuys Blvd. Suite A-8. Van Nuys, CA 91405"})
+guest4 = Guest.new({"name" => "Izzy", "last_name" => "Stradlin", "nationality" => "American", "dob" => Date.new(1965, 4, 8), "documents" => "Passport", "contacts" => "+1 765 276 7700 - West Lafayette, Indiana 47906"})
+guest5 = Guest.new({"name" => "Steven", "last_name" => "Adler", "nationality" => "American", "dob" => Date.new(1965, 1, 22), "documents" => "Passport", "contacts" => "10866 Wilshire Blvd., Los Angeles, California 90024"})
 guest1.save
 guest2.save
 guest3.save
