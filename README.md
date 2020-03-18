@@ -85,11 +85,14 @@ This application relies on a relational database. To create a database using PG 
     
     psql -d wiggo -f db/wiggo.sql 
     
-Run the wiggo_property_management/db/seeds.rb file
+Then run the following:
 
-Run the wiggo_property_management/app.rb file
+    wiggo_property_management/db/seeds.rb file
 
-URL http://localhost:4567/
+    wiggo_property_management/app.rb file
+
+
+And visit URL http://localhost:4567/.
 
 
 ## Licensing
