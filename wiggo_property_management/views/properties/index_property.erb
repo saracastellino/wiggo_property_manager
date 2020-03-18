@@ -38,7 +38,8 @@
                   <p>Booking platform:<br> <%= property.booking_platform %></p>
                   <p>Sleeps:<br> <%= property.sleeps %></p>
                   <p>Daily fee:<br> £<%= property.daily_fee %></p>
-                  <p>Pending guests: <br> <%= property.guests() %> </p>
+                  <p>Pending guests: <br> 
+                  <% for guest in property.guests %><%= guest.last_name%><% end %></p>
                 </div>
               </div>
             </div>

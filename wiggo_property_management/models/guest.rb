@@ -98,7 +98,7 @@ class Guest
      values = [@id]
      properties = SqlRunner.run(sql, values)
      property_data = Property.map_items(properties)
-     property_data[0].name
+     return property_data
    end
 
  # ------------------CREATE A BOOKINGS METHOD TO SEE GUESTS' BOOKINGS

@@ -20,7 +20,7 @@
 
     <div class="form-el">
       <label for="property_selection">Select guest:</label>
-      <select name="guest"_id" id="guest_selection" selected="<%= @booking.guest_id  %>">
+      <select name="guest_id" id="guest_selection" selected="<%= @booking.guest_id  %>">
         <% @guests.each do |guest| %>
           <% if guest.id == @booking.guest_id %>
             <option value=<%= guest.id %> selected><%= guest.guest_name %></option>

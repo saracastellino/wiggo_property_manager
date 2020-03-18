@@ -71,7 +71,7 @@ class Property
 
 # ------------------CREATE A GUESTS METHOD TO SEE PROPERTIES' GUESTS
 
-  def guests
+  def guests()
      sql = "SELECT guests.*
      FROM guests
      INNER JOIN bookings
@@ -80,7 +80,7 @@ class Property
      values = [@id]
      guests = SqlRunner.run(sql, values)
      guests_data = Guest.map_items(guests)
-     guests_data[0].last_name
+     return guests_data
    end
 
 

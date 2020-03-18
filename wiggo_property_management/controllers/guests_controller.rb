@@ -40,8 +40,9 @@ post '/guests/:id/delete' do
   guest.delete
   erb( :"guests/delete_guest")
 end
-#
-# post '/guests/properties' do
-#   properties = Guest.properties
-#   erb( :"/guest_properties" )
-# end
+
+post '/guests/:id/properties' do
+  guest = Guest.find(params['id'])
+  @properties = guest.properties
+  erb( :"/guest_properties" )
+end
