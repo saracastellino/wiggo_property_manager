@@ -80,8 +80,7 @@ class Property
      values = [@id]
      guests = SqlRunner.run(sql, values)
      guests_data = Guest.map_items(guests)
-     # return guests_data.fetch[:last_name]
-     return guests_data.values_at("last_name")
+     guests_data[0].last_name
    end
 
 

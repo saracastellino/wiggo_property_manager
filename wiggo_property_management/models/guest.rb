@@ -98,8 +98,7 @@ class Guest
      values = [@id]
      properties = SqlRunner.run(sql, values)
      property_data = Property.map_items(properties)
-     # return guests_data.fetch[:last_name]
-     return property_data.values_at("name")
+     property_data[0].name
    end
 
  # ------------------CREATE A BOOKINGS METHOD TO SEE GUESTS' BOOKINGS
