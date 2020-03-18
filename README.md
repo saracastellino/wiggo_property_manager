@@ -1,4 +1,4 @@
-![Logo of the project](https://raw.githubusercontent.com/jehna/readme-best-practices/master/sample-logo.png)
+![Logo of the project](https://github.com/saracastellino/week_5_ruby_project/blob/master/images/logo.png)
 
 # Wiggo | Property management, organised.
 
@@ -29,7 +29,15 @@ Ruby, SQL, Sinatra, HTML.
 
 #### Code highlights
 
-![Method property.guests](../images/booking_total_earning.png)
+* Total earning method
+![Method property.guests](https://github.com/saracastellino/week_5_ruby_project/blob/master/images/booking_total_earning.png)
+Code
+![Method property.guests code](https://github.com/saracastellino/week_5_ruby_project/blob/master/images/booking_total_earning%20code.png)
+
+* View property's guest from property card
+![Method property.guests](https://github.com/saracastellino/week_5_ruby_project/blob/master/images/property_guests%20.png)
+Code
+![Method property.guests code](https://github.com/saracastellino/week_5_ruby_project/blob/master/images/property_guests%20code.png)
 
 #### Styling
 
