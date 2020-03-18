@@ -80,7 +80,9 @@ Code
 Clone repo https://github.com/saracastellino/week_5_ruby_project/tree/master/wiggo_property_management
 
 This application relies on a relational database. To create a database using PG on Linux OS, use the following commands:
+
     creatdb wiggo
+    
     psql -d wiggo -f db/wiggo.sql 
     
 Run the wiggo_property_management/db/seeds.rb file
