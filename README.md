@@ -27,21 +27,38 @@ URL http://localhost:4567/
 
 Ruby, SQL, Sinatra, HTML.
 
-#### Code highlights
+## Tables
+
+![Wiggo Tables](https://github.com/saracastellino/week_5_ruby_project/blob/master/images/Tables.png)
+
+## Code highlights
 
 * Total earning method
+
 ![Method property.guests](https://github.com/saracastellino/week_5_ruby_project/blob/master/images/booking_total_earning.png)
 Code
+
 ![Method property.guests code](https://github.com/saracastellino/week_5_ruby_project/blob/master/images/booking_total_earning%20code.png)
 
 * View property's guest from property card
+
 ![Method property.guests](https://github.com/saracastellino/week_5_ruby_project/blob/master/images/property_guests%20.png)
 Code
+
 ![Method property.guests code](https://github.com/saracastellino/week_5_ruby_project/blob/master/images/property_guests%20code.png)
 
 #### Styling
 
 The colours used were adopted after researching protanopia to make text easily readable and aesthetically pleasant.
+
+Normal vision
+
+![Normal vision](https://github.com/saracastellino/week_5_ruby_project/blob/master/images/coolors%20normal%20view.png)
+
+Protanopia vision
+
+![Protanopia vision](https://github.com/saracastellino/week_5_ruby_project/blob/master/images/coolors%20protanopia%20view.png)
+
 
 ## Links
 
