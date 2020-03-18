@@ -39,7 +39,14 @@
                   <p>Sleeps:<br> <%= property.sleeps %></p>
                   <p>Daily fee:<br> £<%= property.daily_fee %></p>
                   <p>Pending guests: <br> 
-                  <% for guest in property.guests %><%= guest.last_name%><% end %></p>
+                    <% for guest in property.guests %>
+                      <% if guest.last_name != [] %>
+                        <%= guest.last_name %>
+                      <% else %>
+                       <p>No pending guest: property available!</p>
+                      <% end %>
+                    <% end %>
+                  </p>
                 </div>
               </div>
             </div>
