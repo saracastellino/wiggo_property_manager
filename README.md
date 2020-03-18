@@ -27,7 +27,7 @@ Protanopia vision
 
 ![Protanopia vision](https://github.com/saracastellino/week_5_ruby_project/blob/master/images/coolors%20protanopia%20view.png)
 
-## MPV
+## MVP
 
 CRUD actions for each table. 
 Views for each table. 
@@ -43,18 +43,9 @@ The views should allow the co-host to see bookings, guests and properties sorted
 Guests who are not over 21 should not be able to book. 
 Show message "Available" if property has no associated guest
 
-## Installing / Getting started
-
-Git pull from https://github.com/saracastellino/week_5_ruby_project/tree/master/wiggo_property_management
-
-Create a "wiggo" database. 
-Run the wiggo_property_management/db/seeds.rb file. 
-Run the wiggo_property_management/app.rb file. 
-URL http://localhost:4567/. 
-
 ## Tech used
 
-Ruby, SQL, Sinatra, HTML, CSS.
+Ruby, PgSQL, Pry, Sinatra, HTML, CSS.
 
 ## Tables
 
@@ -82,6 +73,22 @@ Code
 
 - Project homepage: https://github.com/saracastellino/week_5_ruby_project/tree/master/wiggo_property_management
 - Repository: https://github.com/saracastellino/week_5_ruby_project
+
+
+## Installing / Getting started
+
+Clone repo https://github.com/saracastellino/week_5_ruby_project/tree/master/wiggo_property_management
+
+This application relies on a relational database. To create a database using PG on Linux OS, use the following commands:
+    creatdb wiggo
+    psql -d wiggo -f db/wiggo.sql 
+    
+Run the wiggo_property_management/db/seeds.rb file
+
+Run the wiggo_property_management/app.rb file
+
+URL http://localhost:4567/
+
 
 ## Licensing
 
