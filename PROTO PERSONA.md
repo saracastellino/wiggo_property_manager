@@ -17,7 +17,7 @@ co-host in holiday properties
 
 pub owner
 
-colourblind (protanpia)
+colourblind (protanopia)
 
 
 
@@ -31,7 +31,7 @@ manages 10 holiday properties mainly from April to October
 
 works in close contact with customers (clients at the pub and guests during summer holidays)
 
-is used to work in italian, english, french and spanish
+is used to work in Italian, English, French and Spanish
 
 is used to manage pub/properties bookings online and to edit her pub's website through website building platforms
 
@@ -48,5 +48,3 @@ needs a simple design and easily readable web pages
 needs more free time
 
 wants to expand her houses portfolio
-
-
