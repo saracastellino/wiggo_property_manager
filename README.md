@@ -29,15 +29,8 @@ Protanopia vision
 
 ![Protanopia vision](https://github.com/saracastellino/week_5_ruby_project/blob/master/images/coolors%20protanopia%20view.png)
 
-<<<<<<< HEAD
-
 Although the website is not responsible, characters sizes are in vw (viewport's width - vw units represent a percentage of the current browser viewport) where possible.
 
-=======
-
-Although the website is not responsible, characters sizes are in vw (viewport's width - vw units represent a percentage of the current browser viewport) where possible.
-
->>>>>>> 95818c542097794e1de76c215ef3a69914610427
 # Back end
 
 ## Tech used
@@ -46,7 +39,6 @@ Ruby, PgSQL, Pry, Sinatra, HTML, CSS.
 
 ## MVP
 
-<<<<<<< HEAD
 CRUD actions for each table, 7 RESTful routes for each table (index, show, new, create, edit, update, delete).
 
 ## Extensions
@@ -58,7 +50,6 @@ Calculate the earning per booking after commissions.
 
 The views should allow the co-host to see bookings, guests and properties sorted by parameters.
 Guests who are not over 21 should not be able to book.
-=======
 CRUD actions for each table, 7 RESTful routes for each table (index, show, new, create, edit, update, delete). 
 
 ## Extensions
@@ -70,12 +61,10 @@ Calculate the earning per booking after commissions.
 
 The views should allow the co-host to see bookings, guests and properties sorted by parameters. 
 Guests who are not over 21 should not be able to book. 
->>>>>>> 95818c542097794e1de76c215ef3a69914610427
 Show message "Available" if property has no associated guest.
 Each property has a total earning based on the sum of all the associated bookings.
 
 ## Tables
-<<<<<<< HEAD
 
 ![Wiggo Tables](https://github.com/saracastellino/week_5_ruby_project/blob/master/images/Tables.png)
 
@@ -133,7 +122,6 @@ Code in models/property.rb
             <% end %>
         <% end %>
     </p>
-=======
 
 ![Wiggo Tables](https://github.com/saracastellino/week_5_ruby_project/blob/master/images/Tables.png)
 
@@ -142,7 +130,6 @@ Code in models/property.rb
 * Total earning method
 
 ![Method property.guests](https://github.com/saracastellino/week_5_ruby_project/blob/master/images/booking_total_earning.png)
->>>>>>> 95818c542097794e1de76c215ef3a69914610427
 
 Code in models/booking.rb
 
@@ -205,21 +192,12 @@ Clone repo https://github.com/saracastellino/week_5_ruby_project/tree/master/wig
 This application relies on a relational database. To create a database using PG on Linux OS, use the following commands:
 
     creatdb wiggo
-<<<<<<< HEAD
     psql -d wiggo -f db/wiggo.sql
 
 Then run the following:
 
     wiggo_property_management/db/seeds.rb
     wiggo_property_management/app.rb
-=======
-    psql -d wiggo -f db/wiggo.sql 
-    
-Then run the following:
-
-    wiggo_property_management/db/seeds.rb 
-    wiggo_property_management/app.rb 
->>>>>>> 95818c542097794e1de76c215ef3a69914610427
 
 And visit URL http://localhost:4567/.
 
