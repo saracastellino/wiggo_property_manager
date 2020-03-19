@@ -88,7 +88,7 @@ class Guest
   end
 
   # ------------------CREATE A PROPERTIES METHOD TO SEE GUESTS' PROPERTIES
-  #
+  
   def properties
      sql = "SELECT properties.*
      FROM properties

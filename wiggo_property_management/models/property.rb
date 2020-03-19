@@ -71,7 +71,7 @@ class Property
 
 # ------------------CREATE A GUESTS METHOD TO SEE PROPERTIES' GUESTS
 
-  def guests()
+  def guests
      sql = "SELECT guests.*
      FROM guests
      INNER JOIN bookings
@@ -82,7 +82,6 @@ class Property
      guests_data = Guest.map_items(guests)
      return guests_data
    end
-
 
  # ------------------CREATE A BOOKINGS METHOD TO SEE PROPERTIES' BOOKINGS
 

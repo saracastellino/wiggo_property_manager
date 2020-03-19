@@ -4,28 +4,29 @@
 
     <div id="wrapper">
       <% @guests.each do |guest| %>
-      <div class="cardCont">
-      <div class="flip-card">
-    <div class="flip-card-inner">
-      <div class="flip-card-front">
-      <div class="guest">
-        <h3><a href="/guests/<%= guest.id %>"><%= guest.guest_name %></a></h3>
-        <p>Nationality:<br> <%= guest.nationality %></p>
-        <p>DOB:<br> <%= guest.dob %></p>
+       <div class="cardCont">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="guest">
+                <h3><a href="/guests/<%= guest.id %>"><%= guest.guest_name %></a></h3>
+                <p>Nationality:<br> <%= guest.nationality %></p>
+                <p>DOB:<br> <%= guest.dob %></p>
+              </div>
+            </div>
+
+          <div class="flip-card-back">
+              <div class="guest">
+                <h3><a href="/guests/<%= guest.id %>"><%= guest.guest_name %></a></h3>
+                <p>Documents:<br> <%= guest.documents %></p>
+                <p>Contacts:<br> <%= guest.contacts %></p>
+                </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
       </div>
     </div>
-    <div class="flip-card-back">
-      <div class="guest">
-        <h3><a href="/guests/<%= guest.id %>"><%= guest.guest_name %></a></h3>
-        <p>Documents:<br> <%= guest.documents %></p>
-        <p>Contacts:<br> <%= guest.contacts %></p>
-      </div>
-        </div>
-      </div>
-      </div>
-        <% end %>
-        </div>
-      </div>
 
     </main>
   </section>
