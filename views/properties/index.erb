@@ -1,0 +1,58 @@
+<section class="flex-container">
+  <main class="flex-item main">
+    <h2>.properties</h2>
+
+    <label class="label_sort">
+       Sort by:
+       <select name="property_id">
+         <% for property in @properties %>
+         <option value="<%= property.name %>">Name</option>
+         <option value="<%= property.category %>">Category</option>
+         <option value="<%= property.place %>">Place</option>
+         <option value="<%= property.sleeps %>">Sleeps</option>
+         <option value="<%= property.booking_platform %>">Booking platform</option>
+         <option value="<%= property.daily_fee %>">Daily fee</option>
+         <% end %>
+       </select>
+     </label>
+
+  <a href="/properties/new" class="button">add a property now</a>
+
+    <div id="wrapper">
+      <% @properties.each do |property| %>
+        <div class="card-cont">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="property">
+                  <h3><a href="/properties/<%= property.id %>"><%= property.name %></a></h3>
+                  <p>Category:<br><%= property.category %></p>
+                  <p>Place:<br> <%= property.place %></p>
+                  <p>Contacts:<br> <%= property.contacts %></p>
+                </div>
+              </div>
+              <div class="flip-card-back">
+                <div class="property">
+                  <h3><a href="/properties/<%= property.id %>"><%= property.name %></a></h3>
+                  <p>Address:<br> <%= property.address %></p>
+                  <p>Booking platform:<br> <%= property.booking_platform %></p>
+                  <p>Sleeps:<br> <%= property.sleeps %></p>
+                  <p>Daily fee:<br> £<%= property.daily_fee %></p>
+                  <p>Pending guests: <br> 
+                    <% for guest in property.guests %>
+                      <% if guest.last_name != [] %>
+                        <%= guest.last_name %>
+                      <% else %>
+                       <p>No pending guest: property available!</p>
+                      <% end %>
+                    <% end %>
+                  </p>
+                </div>
+              </div>
+            </div>
+        </div>
+      <% end %>
+    </div>
+
+  </main>
+</section>

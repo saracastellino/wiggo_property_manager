@@ -1,0 +1,44 @@
+<section class="flex-container">
+  <main class="flex-item main">
+    <h2>.guests</h2>
+
+    <label class="label_sort">
+       Sort by:
+       <select name="guest_id">
+         <% for guest in @guests %>
+         <option value="<%= guest.name %>">Name</option>
+         <option value="<%= guest.nationality %>">Nationality</option>
+         <% end %>
+       </select>
+     </label>
+
+    <a href="/guests/new" class="button">add a guest now</a>
+
+    <div id="wrapper">
+      <% @guests.each do |guest| %>
+        <div class="card-cont">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                  <div class="guest">
+                      <h3><a href="/guests/<%= guest.id %>"><%= guest.guest_name %></a></h3>
+                      <p>Nationality:<br> <%= guest.nationality %></p>
+                      <p>DOB:<br> <%= guest.dob %></p>
+                    </div>
+                  </div>
+                <div class="flip-card-back">
+                  <div class="guest">
+                    <h3><a href="/guests/<%= guest.id %>"><%= guest.guest_name %></a></h3>
+                    <p>Documents:<br> <%= guest.documents %></p>
+                    <p>Contacts:<br> <%= guest.contacts %></p>
+                    <p>Properties booked: <br> 
+                  <% for property in guest.properties %><%= property.name %><% end %></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+      <% end %>
+    </div>
+
+  </main>
+</section>

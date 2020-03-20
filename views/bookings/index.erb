@@ -1,0 +1,45 @@
+<section class="flex-container">
+  <main class="flex-item main">
+    <h2>.bookings</h2>
+
+    <label class="label_sort">
+       Sort by:
+       <select name="booking_id">
+         <% for booking in @bookings %>
+         <option value="<%= booking.property.name %>">Name</option>
+         <option value="<%= booking.check_in_date %>">Check in date</option>
+         <option value="<%= booking.check_out_date %>">check_out_date</option>
+         <% end %>
+       </select>
+     </label>
+
+    <a href="/bookings/new" class="button">add a booking now</a>
+
+    <div id="wrapper">
+      <% @bookings.each do |booking| %>
+        <div class="card-cont">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="booking">
+                  <h3><a href="/bookings/<%= booking.id %>"><%= booking.property.name %></a></h3>
+                  <p>Guest:<br> <%= booking.guest.guest_name%></p>
+                  <p>Pax:<br> <%= booking.pax %>
+                  <p>Nights:<br> <%= booking.nights %></p>
+                </div>
+              </div>
+              <div class="flip-card-back">
+                <div class="booking">
+                  <h3><a href="/bookings/<%= booking.id %>"><%= booking.property.name %></a></h3>
+                  <p>Check in:<br> <%= booking.check_in_date %></p>
+                  <p>Check out:<br> <%= booking.check_out_date %></p>
+                  <p>Total earning:<br>£ <%= booking.calc_total_earning(booking.nights, booking.property) %></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+        </div>
+
+  </main>
+</section>
