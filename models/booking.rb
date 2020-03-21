@@ -7,8 +7,8 @@ class Booking
 
   def initialize( bookings )
     @id = bookings['id'].to_i if bookings['id']
-    @guest_id = bookings['guest_id']
-    @property_id = bookings['property_id']
+    @guest_id = bookings['guest_id'].to_i
+    @property_id = bookings['property_id'].to_i
     @pax = bookings['pax'].to_i
     @check_in_date = bookings['check_in_date']
     @check_out_date = bookings['check_out_date']

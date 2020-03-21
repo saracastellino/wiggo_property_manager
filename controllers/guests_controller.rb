@@ -3,10 +3,17 @@ require('sinatra/contrib/all')
 require_relative('../models/guest')
 require_relative('../models/property')
 require_relative('../models/booking')
+require_relative('../models/booking_platform')
 also_reload('../models/*')
 
 get '/guests' do
   @guests = Guest.sort_by_last_name
+  erb(:"guests/index")
+end
+
+post 'guests/by_nationality/' do
+  @guest = Guest.find(params[guest_id])
+  Guest.sort_by_nationality
   erb(:"guests/index")
 end
 
@@ -44,5 +51,6 @@ end
 post '/guests/:id/properties' do
   guest = Guest.find(params['id'])
   @properties = guest.properties
+  @booking_platforms = BookingPlatform.all 
   erb( :"/guest_properties" )
 end

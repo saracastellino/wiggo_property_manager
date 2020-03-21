@@ -1,19 +1,7 @@
 DROP TABLE IF EXISTS bookings;
 DROP TABLE IF EXISTS properties;
+DROP TABLE IF EXISTS booking_platforms;
 DROP TABLE IF EXISTS guests;
-
-
-CREATE TABLE properties (
-  id SERIAL PRIMARY KEY,
-  name VARCHAR(255),
-  category VARCHAR(255),
-  address VARCHAR(255),
-  place VARCHAR(255),
-  booking_platform VARCHAR(255),
-  sleeps INT,
-  daily_fee INT,
-  contacts VARCHAR(255)
-);
 
 CREATE TABLE guests (
   id SERIAL PRIMARY KEY,
@@ -22,6 +10,24 @@ CREATE TABLE guests (
   nationality VARCHAR(255),
   dob DATE,
   documents VARCHAR(255),
+  contacts VARCHAR(255)
+);
+
+CREATE TABLE booking_platforms (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255),
+  url VARCHAR(255)
+);
+
+CREATE TABLE properties (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255),
+  category VARCHAR(255),
+  address VARCHAR(255),
+  place VARCHAR(255),
+  booking_platform_id INT REFERENCES booking_platforms(id) ON DELETE CASCADE,
+  sleeps INT,
+  daily_fee INT,
   contacts VARCHAR(255)
 );
 

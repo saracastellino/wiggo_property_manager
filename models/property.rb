@@ -3,7 +3,7 @@ require_relative('../db/sql_runner')
 class Property
 
   attr_reader :id
-  attr_accessor :name, :category, :address, :place, :booking_platform, :sleeps, :daily_fee, :contacts
+  attr_accessor :name, :category, :address, :place, :booking_platform_id, :sleeps, :daily_fee, :contacts
 
   def initialize( properties )
     @id = properties['id'].to_i if properties['id']
@@ -11,15 +11,15 @@ class Property
     @category = properties['category']
     @address = properties['address']
     @place = properties['place']
-    @booking_platform = properties['booking_platform']
+    @booking_platform_id = properties['booking_platform_id'].to_i
     @sleeps = properties['sleeps'].to_i
     @daily_fee = properties['daily_fee'].to_i
     @contacts = properties['contacts']
   end
 
   def save
-    sql = "INSERT INTO properties (name, category, address, place, booking_platform, sleeps, daily_fee, contacts) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING id"
-    values = [@name, @category, @address, @place, @booking_platform, @sleeps, @daily_fee, @contacts]
+    sql = "INSERT INTO properties (name, category, address, place, booking_platform_id, sleeps, daily_fee, contacts) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING id"
+    values = [@name, @category, @address, @place, @booking_platform_id, @sleeps, @daily_fee, @contacts]
     properties_data = SqlRunner.run(sql, values)
     @id = properties_data.first['id'].to_i
   end
@@ -30,9 +30,9 @@ class Property
   end
 
   def update
-    sql = "UPDATE properties SET (name, category, address, place, booking_platform, sleeps, daily_fee, contacts) = ($1, $2, $3, $4, $5, $6, $7, $8)
+    sql = "UPDATE properties SET (name, category, address, place, booking_platform_id, sleeps, daily_fee, contacts) = ($1, $2, $3, $4, $5, $6, $7, $8)
     WHERE id = $9"
-    values = [@name, @category, @address, @place, @booking_platform, @sleeps, @daily_fee, @contacts, @id]
+    values = [@name, @category, @address, @place, @booking_platform_id, @sleeps, @daily_fee, @contacts, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -90,6 +90,15 @@ class Property
     values = [@id]
     bookings = SqlRunner.run(sql, values)
     return Booking.map_items(bookings)
+  end
+
+   # ------------------CREATE A BOOKING_PLATFORM METHOD TO SEE PROPERTIES' BOOKINGS
+
+  def booking_platform
+    sql = "SELECT name FROM booking_platforms WHERE id = $1"
+    values = [@booking_platform_id]
+    booking_platform = SqlRunner.run(sql, values).first
+    return booking_platform.fetch("name")
   end
 
   # ------------------------CALCULATING TOTAL EARNING FROM A PROPERTY

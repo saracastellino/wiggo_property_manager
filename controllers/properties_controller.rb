@@ -3,6 +3,7 @@ require('sinatra/contrib/all')
 require_relative('../models/guest')
 require_relative('../models/property')
 require_relative('../models/booking')
+require_relative('../models/booking_platform')
 also_reload('../models/*')
 
 get '/properties' do
@@ -11,12 +12,13 @@ get '/properties' do
 end
 
 get '/properties/new' do
+  @booking_platforms = BookingPlatform.all 
   erb(:"properties/new")
 end
 
 post '/properties' do
   @property = Property.new( params )
-  @property.save()
+  @property.save
   erb(:"properties/create")
 end
 
@@ -26,6 +28,7 @@ get '/properties/:id' do
 end
 
 get '/properties/:id/edit' do
+  @booking_platform = BookingPlatform.all
   @property = Property.find(params['id'])
   erb(:"properties/edit")
 end

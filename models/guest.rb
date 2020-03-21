@@ -28,7 +28,6 @@ class Guest
   end
 
   def guest_age
-    # dob = self.dob
     if @dob != nil
       age = Date.today.year - @dob.year
       return age
@@ -78,6 +77,20 @@ class Guest
     result = SqlRunner.run(sql, values).first
     guest = Guest.new(result)
     return guest
+  end
+
+  def self.sort_by_last_name
+    sql = "SELECT * FROM guests ORDER BY last_name ASC"
+    guest_data = SqlRunner.run(sql)
+    guests = map_items(guest_data)
+    return guests
+  end
+
+  def self.sort_by_nationality
+    sql = "SELECT * FROM guests ORDER BY nationality ASC"
+    guest_data = SqlRunner.run(sql)
+    guests = map_items(guest_data)
+    return guests
   end
 
   def self.sort_by_last_name
