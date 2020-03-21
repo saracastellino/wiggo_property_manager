@@ -29,7 +29,7 @@
     Select a booking platform:
       <select name="booking_platform_id">
         <% for booking_platform in @booking_platforms %>
-        <option value="<%= booking_platform.id %>"><%= booking_platform %></option>
+        <option value="<%= booking_platform.id %>"><%= booking_platform.name %></option>
         <% end %>
       </select>
     </label>

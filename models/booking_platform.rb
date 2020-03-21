@@ -43,7 +43,7 @@ class BookingPlatform
   end
 
   def self.map_items(booking_platform_data)
-    return booking_platform_data.map { |booking_platform| Booking.new(booking_platform) }
+    return booking_platform_data.map { |booking_platform| BookingPlatform.new(booking_platform) }
   end
 
   def self.find(id)
