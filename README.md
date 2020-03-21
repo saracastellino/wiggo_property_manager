@@ -56,7 +56,7 @@ Each property has a total earning based on the sum of all the associated booking
 
 ## Tables
 
-![Wiggo Tables](https://github.com/saracastellino/week_5_ruby_project/blob/master/images/Tables.png)
+![Wiggo Tables](https://github.com/saracastellino/week_5_ruby_project/blob/master/images/tables.png)
 
 ## Code highlights
 
@@ -134,7 +134,3 @@ Then run the following:
 
 And visit URL http://localhost:4567/.
 
-
-## Licensing
-
-"The code in this project is licensed under SC license."
