@@ -58,6 +58,8 @@ booking3.check_in_date = "Jul 5 2020"
 booking3.update
 booking3.nights = 26
 booking3.update
+property4.booking_platform_id = booking_platform3.id
+property4.update
 
 binding.pry
 nil

@@ -25,8 +25,14 @@
     </div>
 
     <div class="form-el">
-      <label for="booking_platform">Booking platform:</label>
-      <input type="text" name="booking_platform" id="booking_platform"/>
+    <label>
+    Select a booking platform:
+      <select name="booking_platform_id">
+        <% for booking_platform in @booking_platforms %>
+        <option value="<%= booking_platform.id %>"><%= booking_platform %></option>
+        <% end %>
+      </select>
+    </label>
     </div>
 
     <div class="form-el">

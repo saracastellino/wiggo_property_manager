@@ -13,6 +13,7 @@ end
 
 get '/properties/new' do
   @booking_platforms = BookingPlatform.all 
+  @property = Property.new( params )
   erb(:"properties/new")
 end
 
@@ -28,7 +29,7 @@ get '/properties/:id' do
 end
 
 get '/properties/:id/edit' do
-  @booking_platform = BookingPlatform.all
+  @booking_platforms = BookingPlatform.all
   @property = Property.find(params['id'])
   erb(:"properties/edit")
 end

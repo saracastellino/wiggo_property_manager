@@ -94,7 +94,7 @@ class Property
 
    # ------------------CREATE A BOOKING_PLATFORM METHOD TO SEE PROPERTIES' BOOKINGS
 
-  def booking_platform
+  def booking_platform_name
     sql = "SELECT name FROM booking_platforms WHERE id = $1"
     values = [@booking_platform_id]
     booking_platform = SqlRunner.run(sql, values).first

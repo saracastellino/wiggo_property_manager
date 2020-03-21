@@ -29,14 +29,14 @@ class BookingPlatform
     SqlRunner.run(sql, values)
   end
 
-  def delete()
+  def delete
     sql = "DELETE FROM booking_platforms WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql, values)
   end
 
-  def self.all()
-    sql = "SELECT * FROM booking_platforms"
+  def self.all
+    sql = "SELECT * FROM booking_platforms;"
     booking_platform_data = SqlRunner.run(sql)
     booking_platforms = map_items(booking_platform_data)
     return booking_platforms
