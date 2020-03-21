@@ -1,5 +1,6 @@
 require('sinatra')
 require('sinatra/contrib/all')
+require('date')
 require_relative('../models/guest')
 require_relative('../models/property')
 require_relative('../models/booking')
@@ -22,9 +23,32 @@ get '/guests/new' do
 end
 
 post '/guests' do
+
   @guest = Guest.new( params )
-  @guest.save()
-  erb( :"guests/create" )
+  if @dob.nil?
+          return "No date of Birth"
+   else 
+          age = Date.today.year - @dob.year
+              if age >= 21
+                     @guest.save
+                     erb( :"guests/create" ) 
+              else
+                     erb( :"guests/not_created" )
+              end        
+  end
+
+
+  #   @guest = Guest.new( params )
+  #     age = Date.today.year - @dob.year
+  #       if age >= 21
+         
+  #         @guest.save
+  #         erb( :"guests/create" ) 
+  #       else
+  #         erb( :"guests/not_created" )
+  #       end        
+
+  
 end
 
 get '/guests/:id' do

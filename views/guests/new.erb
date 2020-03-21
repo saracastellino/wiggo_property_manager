@@ -21,13 +21,15 @@
 
         <div class="form-el">
           <label for="dob">DOB:</label>
-          <input type="text" name="dob" id="dob"/>
+          <input type="date" name="dob" id="dob"/>
         </div>
 
-        <div class="form-el">
-          <label for="documents">Documents:</label>
-          <input type="text" name="documents" id="documents"/>
-        </div>
+        <label for="documents-selection">Select a document:</label>
+        <select name="documents" id="documents-selection">
+          <option value="Passport">Passport</option>
+          <option value="Driving license">Driving license</option>
+        </select>
+      <br>
 
         <div class="form-el">
           <label for="contacts">Contacts:</label>

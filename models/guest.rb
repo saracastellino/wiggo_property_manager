@@ -27,14 +27,14 @@ class Guest
     return "#{@name} #{@last_name}"
   end
 
-  def guest_age
-    if @dob != nil
-      age = Date.today.year - @dob.year
-      return age
-    else
-      return "No Date of Birth"
-    end
-  end
+  # def guest_age
+  #   if @dob != nil
+  #     age = Date.today.year - @dob.year
+  #     return age
+  #   else
+  #     return "No Date of Birth"
+  #   end
+  # end
 
   # def guest_can_book
   #   if self.guest_age < 18

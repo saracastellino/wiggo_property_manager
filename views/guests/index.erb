@@ -32,7 +32,12 @@
                     <p>Documents:<br> <%= guest.documents %></p>
                     <p>Contacts:<br> <%= guest.contacts %></p>
                     <p>Properties booked: <br> 
-                  <% for property in guest.properties %><%= property.name %><% end %></p>
+                        <% if guest.properties.empty? %>
+                        <%= 'No properties booked!' %>
+                      <% else %>
+                        <% for property in guest.properties %><%= property.name %><% end %></p>
+                        <% end %>
+                  </p>
                   </div>
                 </div>
               </div>
