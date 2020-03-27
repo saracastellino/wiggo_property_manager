@@ -3,6 +3,7 @@ require_relative('../models/property')
 require_relative('../models/booking')
 require_relative('../models/booking_platform')
 require('date')
+require('pry')
 
 Guest.delete_all
 Property.delete_all
@@ -59,3 +60,6 @@ booking3.nights = 26
 booking3.update
 property4.booking_platform_id = booking_platform3.id
 property4.update
+
+binding.pry 
+nil

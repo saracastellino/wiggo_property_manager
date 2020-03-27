@@ -10,6 +10,16 @@ get '/bookings' do
   erb(:"bookings/index")
 end
 
+get '/bookings/by_check_in_date' do
+  @bookings = Booking.sort_by_check_in_date
+  erb(:"bookings/index")
+end
+
+get '/bookings/by_check_out_date' do
+  @bookings = Booking.sort_by_check_out_date
+  erb(:"bookings/index")
+end
+
 get '/bookings/new' do
   @guests = Guest.all
   @properties = Property.all
