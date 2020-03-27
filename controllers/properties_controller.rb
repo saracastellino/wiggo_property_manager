@@ -10,6 +10,16 @@ get '/properties' do
   erb(:"properties/index")
 end
 
+get '/properties/by_category' do
+  @properties = Property.sort_by_category
+  erb(:"properties/index")
+end
+
+get '/properties/by_name' do
+  @properties = Property.sort_by_name
+  erb(:"properties/index")
+end
+
 get '/properties/new' do
   @booking_platforms = BookingPlatform.all 
   @property = Property.new( params )

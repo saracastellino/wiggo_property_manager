@@ -1,5 +1,6 @@
 require_relative('../db/sql_runner')
 
+
 class Guest
 
   attr_reader :id
@@ -44,6 +45,10 @@ class Guest
   def self.delete_all
     sql = "DELETE FROM guests;"
     SqlRunner.run(sql)
+  end
+
+  def self.minimum_dob_year
+   # Calculate minimum year for 21 years ago in "YYYY-MM-DD" (make sure it's string)
   end
 
   def update

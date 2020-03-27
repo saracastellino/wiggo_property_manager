@@ -11,29 +11,35 @@ get '/guests' do
   erb(:"guests/index")
 end
 
-post 'guests/by_nationality/' do
-  @guest = Guest.find(params[guest_id])
-  Guest.sort_by_nationality
+get '/guests/by_nationality' do
+  @guests = Guest.sort_by_nationality
   erb(:"guests/index")
 end
 
 get '/guests/new' do
+  #@minimum_date = Guest.minimum_dob_year()
   erb(:"guests/new")
 end
 
 post '/guests' do
   @guest = Guest.new( params )
-  if @guest.dob.nil?
-          return "No date of Birth"
-  else 
-   age = Date.today - @guest.dob
-      if age >= 21
-         @guest.save
-         erb( :"guests/create" ) 
-      else
-         erb( :"guests/not_created" )
-      end        
-  end
+# return erb( :"guests/not_created" ) if @guest.dob.nil?
+# return erb( :"guests/not_created" ) if @guest.dob <= Some kind of today's year subtract 21
+
+# @guest.save
+# erb( :"guests/create" ) 
+
+  # if @guest.dob.nil?
+  #         return "No date of Birth"
+  # else 
+  #  age = Date.today.year - @guest.dob.year
+  #     if age >= 21
+  #        @guest.save
+  #        erb( :"guests/create" ) 
+  #     else
+  #        erb( :"guests/not_created" )
+  #     end        
+  # end
 end
 
 get '/guests/:id' do

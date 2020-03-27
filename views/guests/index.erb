@@ -2,15 +2,9 @@
   <main class="flex-item main">
     <h2>.guests</h2>
 
-    <label class="label_sort">
-       Sort by:
-       <select name="guest_id">
-         <% for guest in @guests %>
-         <option value="<%= guest.name %>">Name</option>
-         <option value="<%= guest.nationality %>">Nationality</option>
-         <% end %>
-       </select>
-     </label>
+    Sort by:
+    <a href="/guests">Name</a>
+    <a href="/guests/by_nationality">Nationality</a>
 
     <a href="/guests/new" class="button">add a guest now</a>
 

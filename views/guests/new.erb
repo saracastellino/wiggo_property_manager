@@ -21,8 +21,10 @@
 
         <div class="form-el">
           <label for="dob">DOB:</label>
-          <input type="date" name="dob" id="dob"/>
+          <input type="date" name="dob" min="<%= @minimum_date %>" id="dob"/>
         </div>
+        # validation require input
+      
 
         <label for="documents-selection">Select a document:</label>
         <select name="documents" id="documents-selection">
