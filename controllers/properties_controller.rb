@@ -1,10 +1,9 @@
 require('sinatra')
-require('sinatra/contrib/all')
+require('sinatra/contrib/all') if development?
 require_relative('../models/guest')
 require_relative('../models/property')
 require_relative('../models/booking')
 require_relative('../models/booking_platform')
-also_reload('../models/*')
 
 get '/properties' do
   @properties = Property.sort_by_place
@@ -45,8 +44,9 @@ post '/properties/:id/delete' do
   erb(:"properties/delete")
 end
 
-post '/properties/:id/guests' do
-  property = Property.find(params['id'])
-  @guests = property.guests
-  erb( :"properties/property_guests" )
+get '/properties/:id/guests' do
+  @property = Property.find(params['id'])
+  @guests = @property.guests
+  erb( :"properties/property_guest" )
 end
+

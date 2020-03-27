@@ -1,32 +1,13 @@
 <section class="flex-container">
   <main class="flex-item main">
-    <h2>.guests</h2>
 
-    <div id="wrapper">
-      <% @guests.each do |guest| %>
-      <div class="cardCont">
-          <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-              <div class="guest">
-                <h3><a href="/guests/<%= guest.id %>"><%= guest.guest_name %></a></h3>
-                <p>Nationality:<br> <%= guest.nationality %></p>
-                <p>DOB:<br> <%= guest.dob %></p>
-              </div>
-            </div>
-        
-        <div class="flip-card-back">
-            <div class="guest">
-              <h3><a href="/guests/<%= guest.id %>"><%= guest.guest_name %></a></h3>
-              <p>Documents:<br> <%= guest.documents %></p>
-              <p>Contacts:<br> <%= guest.contacts %></p>
-            </div>
-              </div>
-            </div>
-          </div>
-      <% end %>
-      </div>
-    </div>
-
+  <h4>Pending guests:</h4> <br> 
+    <p><% if @property.guests.empty? %>
+        <%= 'Property available!' %>
+    <% else %>
+        <% for guest in @property.guests %><%= guest.guest_name %><% end %>
+    <% end %>
+    </p>
   </main>
 </section>
+

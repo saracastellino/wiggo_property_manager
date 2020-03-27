@@ -66,6 +66,20 @@ class Booking
     return properties
   end
 
+  def self.sort_by_check_in_date
+    sql = "SELECT * FROM bookings ORDER BY check_in_date ASC"
+    property_data = SqlRunner.run(sql)
+    properties = map_items(property_data)
+    return properties
+  end
+
+  def self.sort_by_check_out_date
+    sql = "SELECT * FROM bookings ORDER BY check_out_date ASC"
+    property_data = SqlRunner.run(sql)
+    properties = map_items(property_data)
+    return properties
+  end
+
   # ------------------------RETURN TOTAL EARNINGS CALCULATION
 
   def calc_total_earning(nights, property)

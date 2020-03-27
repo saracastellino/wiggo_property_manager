@@ -69,6 +69,20 @@ class Property
     return properties
   end
 
+  def self.sort_by_category
+    sql = "SELECT * FROM properties ORDER BY category ASC"
+    property_data = SqlRunner.run(sql)
+    properties = map_items(property_data)
+    return properties
+  end
+
+  def self.sort_by_name
+    sql = "SELECT * FROM properties ORDER BY name ASC"
+    property_data = SqlRunner.run(sql)
+    properties = map_items(property_data)
+    return properties
+  end
+
 # ------------------CREATE A GUESTS METHOD TO SEE PROPERTIES' GUESTS
 
   def guests

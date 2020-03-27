@@ -1,11 +1,10 @@
 require('sinatra')
-require('sinatra/contrib/all')
+require('sinatra/contrib/all') if development?
 require('date')
 require_relative('../models/guest')
 require_relative('../models/property')
 require_relative('../models/booking')
 require_relative('../models/booking_platform')
-also_reload('../models/*')
 
 get '/guests' do
   @guests = Guest.sort_by_last_name
@@ -23,32 +22,18 @@ get '/guests/new' do
 end
 
 post '/guests' do
-
   @guest = Guest.new( params )
-  if @dob.nil?
+  if @guest.dob.nil?
           return "No date of Birth"
-   else 
-          age = Date.today.year - @dob.year
-              if age >= 21
-                     @guest.save
-                     erb( :"guests/create" ) 
-              else
-                     erb( :"guests/not_created" )
-              end        
+  else 
+   age = Date.today - @guest.dob
+      if age >= 21
+         @guest.save
+         erb( :"guests/create" ) 
+      else
+         erb( :"guests/not_created" )
+      end        
   end
-
-
-  #   @guest = Guest.new( params )
-  #     age = Date.today.year - @dob.year
-  #       if age >= 21
-         
-  #         @guest.save
-  #         erb( :"guests/create" ) 
-  #       else
-  #         erb( :"guests/not_created" )
-  #       end        
-
-  
 end
 
 get '/guests/:id' do
@@ -72,9 +57,8 @@ post '/guests/:id/delete' do
   erb( :"guests/delete")
 end
 
-post '/guests/:id/properties' do
-  guest = Guest.find(params['id'])
-  @properties = guest.properties
-  @booking_platforms = BookingPlatform.all 
-  erb( :"/guest_properties" )
+get '/guests/:id/properties' do
+  @guest = Guest.find(params['id'])
+  @properties = @guest.properties
+  erb( :"guests/guest_properties" )
 end

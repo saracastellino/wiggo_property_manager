@@ -93,13 +93,6 @@ class Guest
     return guests
   end
 
-  def self.sort_by_last_name
-    sql = "SELECT * FROM guests ORDER BY last_name ASC"
-    guest_data = SqlRunner.run(sql)
-    guests = map_items(guest_data)
-    return guests
-  end
-
   # ------------------CREATE A PROPERTIES METHOD TO SEE GUESTS' PROPERTIES
   
   def properties

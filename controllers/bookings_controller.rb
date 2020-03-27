@@ -1,10 +1,9 @@
 require('sinatra')
-require('sinatra/contrib/all')
+require('sinatra/contrib/all') if development?
 require_relative('../models/guest')
 require_relative('../models/property')
 require_relative('../models/booking')
 require_relative('../models/booking_platform')
-also_reload('../models/*')
 
 get '/bookings' do
   @bookings = Booking.sort_by_property

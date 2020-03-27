@@ -9,6 +9,7 @@
       <p>Contacts: <%= @guest.contacts %></p>
 
       <a href="/guests/<%= @guest.id %>/edit" class="button">edit</a>
+      <a href="/guests/<%= @guest.id %>/properties" class="button">see properties</a>
       <form action="/guests/<%= @guest.id %>/delete" method="POST"><input type="submit" value="delete" class="button"></form>
   </main>
 </section>
