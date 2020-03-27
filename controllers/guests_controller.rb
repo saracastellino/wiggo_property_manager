@@ -1,5 +1,6 @@
 require('sinatra')
 require('sinatra/contrib/all') if development?
+require('Time')
 require('date')
 require_relative('../models/guest')
 require_relative('../models/property')
@@ -17,29 +18,18 @@ get '/guests/by_nationality' do
 end
 
 get '/guests/new' do
-  #@minimum_date = Guest.minimum_dob_year()
   erb(:"guests/new")
 end
 
 post '/guests' do
   @guest = Guest.new( params )
-# return erb( :"guests/not_created" ) if @guest.dob.nil?
-# return erb( :"guests/not_created" ) if @guest.dob <= Some kind of today's year subtract 21
-
-# @guest.save
-# erb( :"guests/create" ) 
-
-  # if @guest.dob.nil?
-  #         return "No date of Birth"
-  # else 
-  #  age = Date.today.year - @guest.dob.year
-  #     if age >= 21
-  #        @guest.save
-  #        erb( :"guests/create" ) 
-  #     else
-  #        erb( :"guests/not_created" )
-  #     end        
-  # end
+  minimum_dob_year_to_book = (Date.today.year - 21)
+       if @gdob.split('-')[0] > minimum_dob_year_to_book.to_s
+   erb( :"guests/not_created" ) 
+  else
+    @guest.save
+    erb( :"guests/create" ) 
+  end
 end
 
 get '/guests/:id' do
