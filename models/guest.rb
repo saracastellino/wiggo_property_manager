@@ -27,15 +27,6 @@ class Guest
     return "#{@name} #{@last_name}"
   end
 
-  def guest_can_book
-     minimum_dob_year_to_book = (Date.today.year - 21).to_s
-     if (@dob.year).to_s < minimum_dob_year_to_book
-       return true
-     else
-       return false
-     end
-  end
-
   def self.delete_all
     sql = "DELETE FROM guests;"
     SqlRunner.run(sql)

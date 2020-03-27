@@ -24,7 +24,7 @@ end
 post '/guests' do
   @guest = Guest.new( params )
   minimum_dob_year_to_book = (Date.today.year - 21)
-       if @gdob.split('-')[0] > minimum_dob_year_to_book.to_s
+       if @guest.dob.split('-')[0] > minimum_dob_year_to_book.to_s
    erb( :"guests/not_created" ) 
   else
     @guest.save
