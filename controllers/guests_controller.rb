@@ -1,6 +1,5 @@
 require('sinatra')
 require('sinatra/contrib/all') if development?
-require('Time')
 require('date')
 require_relative('../models/guest')
 require_relative('../models/property')
