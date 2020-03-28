@@ -117,6 +117,7 @@ Code in models/property.rb
 
 - Project homepage: https://github.com/saracastellino/week_5_ruby_project/tree/master/wiggo_property_management
 - Repository: https://github.com/saracastellino/week_5_ruby_project
+- Heroku: https://wiggo.herokuapp.com/
 
 
 ## Installing / Getting started
