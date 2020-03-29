@@ -46,12 +46,12 @@ CRUD actions for each table, 7 RESTful routes for each table (index, show, new, 
 
 Let the co-host see all guests currently in the property. 
 Calculate the earning per booking after commissions. 
-
-## Extensions on their way
-
 The views should allow the co-host to see bookings, guests and properties sorted by parameters. 
 Guests who are not over 21 should not be able to book. 
 Show message "Available" if property has no associated guest.
+
+## Extensions on their way
+
 Each property has a total earning based on the sum of all the associated bookings.
 
 ## Tables
