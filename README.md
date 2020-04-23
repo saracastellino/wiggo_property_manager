@@ -1,4 +1,4 @@
-![Logo of the project](https://github.com/saracastellino/week_5_ruby_project/blob/master/images/logo.png)
+![Logo of the project](https://github.com/saracastellino/wiggo_property_manager/blob/master/images/logo.png)
 
 # Wiggo | Property management, organised.
 
@@ -23,11 +23,11 @@ The colours used were adopted after researching protanopia to make text easily r
 
 Normal vision
 
-![Normal vision](https://github.com/saracastellino/week_5_ruby_project/blob/master/images/coolors%20normal%20view.png)
+![Normal vision](https://github.com/saracastellino/wiggo_property_manager/blob/master/images/coolors%20normal%20view.png)
 
 Protanopia vision
 
-![Protanopia vision](https://github.com/saracastellino/week_5_ruby_project/blob/master/images/coolors%20protanopia%20view.png)
+![Protanopia vision](https://github.com/saracastellino/wiggo_property_manager/blob/master/images/coolors%20protanopia%20view.png)
 
 
 Although the website is not responsive, characters sizes are in vw (viewport's width - vw units represent a percentage of the current browser viewport) where possible.
@@ -56,13 +56,13 @@ Each property has a total earning based on the sum of all the associated booking
 
 ## Tables
 
-![Wiggo Tables](https://github.com/saracastellino/week_5_ruby_project/blob/master/images/tables.png)
+![Wiggo Tables](https://github.com/saracastellino/wiggo_property_manager/blob/master/images/tables.png)
 
 ## Code highlights
 
 * Total earning method
 
-![Method property.guests](https://github.com/saracastellino/week_5_ruby_project/blob/master/images/booking_total_earning.png)
+![Method property.guests](https://github.com/saracastellino/wiggo_property_manager/blob/master/images/booking_total_earning.png)
 
 Code in models/booking.rb
 
@@ -85,7 +85,7 @@ Code in views/index_booking.erb
 
 * View property's guest from property card
 
-![Method property.guests](https://github.com/saracastellino/week_5_ruby_project/blob/master/images/property_guests%20.png)
+![Method property.guests](https://github.com/saracastellino/wiggo_property_manager/blob/master/images/property_guests%20.png)
 
 Code in models/property.rb
 
@@ -115,14 +115,14 @@ Code in models/property.rb
                 
 ## Links
 
-- Project homepage: https://github.com/saracastellino/week_5_ruby_project/tree/master/wiggo_property_management
-- Repository: https://github.com/saracastellino/week_5_ruby_project
+- Project homepage: https://github.com/saracastellino/wiggo_property_manager/tree/master/wiggo_property_management
+- Repository: https://github.com/saracastellino/wiggo_property_manager
 - Heroku: https://wiggo.herokuapp.com/
 
 
 ## Installing / Getting started
 
-Clone repo https://github.com/saracastellino/week_5_ruby_project/tree/master/wiggo_property_management.
+Clone repo https://github.com/saracastellino/wiggo_property_manager/tree/master/wiggo_property_management.
 This application relies on a relational database. To create a database using PG on Linux OS, use the following commands:
 
     creatdb wiggo
